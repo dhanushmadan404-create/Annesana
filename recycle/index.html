@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Annesana</title>
+    <style>
+        *{
+            text-decoration: none;
+            color: goldenrod;
+        }
+        
+        body {
+        background-image: url(./images/logo.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+      }
+      .chennai-map{
+        object-fit:contain;
+        position: fixed;
+        bottom: 10px;
+        height: 350px;
+        border-radius: 150px;
+        animation: scroll infinite 10s ease-in-out;
+      }
+
+      .option {
+        height: 700px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        justify-content: space-around;
+      }
+
+      .choose {
+        margin-top: 300px;
+        font-size: 40px;
+        animation: move infinite 2s;
+      }
+      @keyframes scroll {
+        0%{transform: translateX(-300px);}
+        100%{transform: translateX(1500px);}
+        
+      }
+      @keyframes move {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateY(0);
+        }
+        40% {
+          transform: translateY(-50px);
+        }
+        60% {
+          transform: translateY(-25px);
+        }
+      }
+      /* @media screen and {
+        
+      } */
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="bgimg"><img src="./images/Chennai Map with Glowing Pin.png" alt="This is my background image" class="chennai-map" ></div>
+      <div class="option">
+        <h1 class="choose"><a href="" target="_self">Vendor</a></h1>
+        <h1 class="choose"><a href="./pages/user.html"target="_self">Food❤️lover</a></h1>
+      </div>
+    </header>
+    
+  </body>
+</html>

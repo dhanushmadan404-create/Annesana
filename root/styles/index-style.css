@@ -1,0 +1,135 @@
+ * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+.logo{
+  width: 100px;
+  height: 70px;
+  object-fit: contain;
+  clip-path: circle(50%);
+  position: relative;
+  left: 90px;
+}
+    body {
+      background: #f9f9f9;
+      color: #333;
+      line-height: 1.5;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      font-size: 20px;
+    }
+
+    .search-bar {
+      display: flex;
+      align-items: center;
+    }
+
+    .search-bar input {
+      padding: 8px 10px;
+      width: 250px;
+      border: 1px solid #ccc;
+      border-radius: 4px 0 0 4px;
+      outline: none;
+    }
+
+    .search-bar button {
+      background: #333;
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 0 4px 4px 0;
+      cursor: pointer;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #f3f3f3;
+      padding: 10px 0;
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+    }
+
+    nav a {
+      margin: 0 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .banner {
+      height: 200px;
+      background: #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 20px;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      margin: 10px 0;
+    }
+
+    .tabs button {
+      background: #eee;
+      border: none;
+      padding: 10px 20px;
+      margin: 0 5px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .for-you {
+      padding: 20px;
+    }
+
+    .for-you-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .for-you-item {
+      background: #ddd;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    section {
+      margin: 20px;
+      background: #ddd;
+      height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    footer {
+      background: #f3f3f3;
+      padding: 20px;
+      text-align: center;
+      border-top: 1px solid #ddd;
+    }
+
+    @media (max-width: 600px) {
+      .search-bar input {
+        width: 150px;
+      }
+    }
