@@ -1,0 +1,193 @@
+/* Reset and Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+}
+
+/* Logo */
+.logo {
+  width: 100px;
+  height: 70px;
+  object-fit: contain;
+  clip-path: circle(50%);
+  position: relative;
+  left: 90px;
+}
+
+/* Body */
+body {
+  background-color: black;
+  color: red;
+  line-height: 1.5;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: #111;
+  box-shadow: 0 2px 5px rgba(255, 0, 0, 0.3);
+  border-bottom: 2px solid red;
+}
+
+header h1 {
+  font-size: 28px;
+  font-weight: 800;
+  text-shadow: 0 0 10px red;
+  letter-spacing: 2px;
+}
+
+/* Search Bar */
+.search-bar {
+  display: flex;
+  align-items: center;
+}
+
+.search-bar input {
+  padding: 8px 10px;
+  width: 250px;
+  border: 2px solid red;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+  background: black;
+  color: red;
+}
+
+.search-bar button {
+  background: red;
+  color: black;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: center;
+  background: #222;
+  padding: 10px 0;
+  border-top: 2px solid red;
+  border-bottom: 2px solid red;
+  gap: 20px;
+}
+
+nav a {
+  color: red;
+  text-decoration: none;
+  font-weight: bold;
+  border: 2px solid red;
+  padding: 10px 20px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  background: red;
+  color: black;
+  box-shadow: 0 0 10px red;
+}
+
+/* Banner */
+.banner {
+  height: 200px;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  border: 2px solid red;
+  text-shadow: 0 0 8px red;
+  font-size: 1.5em;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.tabs button {
+  background: transparent;
+  border: 2px solid red;
+  color: red;
+  padding: 10px 20px;
+  margin: 0 5px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.tabs button:hover {
+  background: red;
+  color: black;
+  box-shadow: 0 0 8px red;
+}
+
+/* For You Section */
+.for-you {
+  padding: 20px;
+}
+
+.for-you-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.for-you-item {
+  background: #111;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid red;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.for-you-item:hover {
+  background: red;
+  color: black;
+}
+
+/* Sections */
+section {
+  margin: 20px;
+  background: #111;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid red;
+  border-radius: 10px;
+}
+
+section h3 {
+  text-shadow: 0 0 8px red;
+}
+
+/* Footer */
+footer {
+  background: #111;
+  padding: 20px;
+  text-align: center;
+  border-top: 2px solid red;
+  color: red;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .search-bar input {
+    width: 150px;
+  }
+}
