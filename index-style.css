@@ -1,5 +1,6 @@
 /* Reset and Base Styles */
 * {
+  text-decoration: none;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -201,8 +202,8 @@ nav a:hover {
   transition: 0.3s;
   color:transparent;}
 
-.for-you-grid > div:hover {
-  /* background: #e85d04; */
+.for-you-grid a :hover {
+  transition: 0.2s;
   font-size: larger;
   color: #fff;
 }
