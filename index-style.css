@@ -165,10 +165,10 @@ nav a:hover {
   border: 2px solid #e85d04;
   border-radius: 12px;
   transition: 0.3s;
-  color:transparent;
+  color: transparent;
 }
-.for-you-item_2{ 
-   background-image: url(./assets/food_image/idly.jpg);
+.for-you-item_2 {
+  background-image: url(./assets/food_image/idly.jpg);
   background-size: 170px;
   background-repeat: no-repeat;
   height: 100px;
@@ -178,8 +178,10 @@ nav a:hover {
   border: 2px solid #e85d04;
   border-radius: 12px;
   transition: 0.3s;
-  color: transparent;}
-.for-you-item_3{ background-image: url(./assets/food_image/kalan.jpg);
+  color: transparent;
+}
+.for-you-item_3 {
+  background-image: url(./assets/food_image/kalan.jpg);
   background-size: 170px;
   background-repeat: no-repeat;
   height: 100px;
@@ -189,8 +191,10 @@ nav a:hover {
   border: 2px solid #e85d04;
   border-radius: 12px;
   transition: 0.3s;
-  color:transparent;}
-.for-you-item_4{ background-image: url(./assets/food_image/soup.jpg);
+  color: transparent;
+}
+.for-you-item_4 {
+  background-image: url(./assets/food_image/soup.jpg);
   background-size: 170px;
   background-repeat: no-repeat;
   height: 100px;
@@ -200,7 +204,8 @@ nav a:hover {
   border: 2px solid #e85d04;
   border-radius: 12px;
   transition: 0.3s;
-  color:transparent;}
+  color: transparent;
+}
 
 .for-you-grid a :hover {
   transition: 0.2s;
@@ -210,7 +215,7 @@ nav a:hover {
 
 /* Sections */
 .section {
-  object-fit:cover;
+  object-fit: cover;
   /* object-position:-70px; */
   width: 1450px;
   margin: 17px;
