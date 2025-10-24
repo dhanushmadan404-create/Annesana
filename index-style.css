@@ -106,15 +106,15 @@ nav a:hover {
 }
 
 /* Banner */
+
 .banner {
   object-fit: contain;
   height: 200px;
-  width: 1450px;
-  margin: auto;
+  width: 1470px;
+  margin:7px 0px 0px 10px ;
   background: linear-gradient(135deg, #ffb347, #ffcc33);
-  margin: 17px;
   border: 2px solid #e85d04;
-  border-radius: 10px;
+  border-radius: 7px;
 }
 
 /* Tabs */
