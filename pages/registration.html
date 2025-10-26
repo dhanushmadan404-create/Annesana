@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vendor Registration</title>
+  <link rel="stylesheet" href="/styles/registration-style.css">
+  <link rel="icon" href="/assets/icons8-a-64.png">
+</head>
+<body>
+  <div class="registration-container">
+    <div class="header">
+      <button class="back-btn">←</button>
+      <h1>vendor Registration</h1>
+    </div>
+
+    <form>
+      <div class="form-group">
+        <label>Cart Name:</label>
+        <input type="text" placeholder="" >
+      </div>
+
+      <div class="form-group">
+        <label>Food Type:</label>
+        <select>
+          <option value="">Select food type</option>
+          <option value="vegetarian">Vegetarian</option>
+          <option value="non-vegetarian">Non-Vegetarian</option>
+          <option value="vegan">Vegan</option>
+          <option value="mixed">Mixed</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>vendor Name:</label>
+        <input type="text" placeholder="">
+      </div>
+
+      <div class="form-group">
+        <label>Phone Number:</label>
+        <input type="tel" placeholder="">
+      </div>
+
+      <div class="form-group">
+        <label>Location:</label>
+        <div class="location-group">
+          <div class="location-icon">📍</div>
+          <input type="text" placeholder="Address">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Image</label>
+        <input type="file" class="image-upload" accept="image/*">
+      </div>
+
+      <div class="form-group">
+        <textarea class="menu-list" placeholder="Menu List"></textarea>
+      </div>
+
+      <div class="operating-hours">
+        <h3>Operating Hours:</h3>
+        <div class="time-inputs">
+          <div class="time-group">
+            <label>Opening Time</label>
+            <input type="time">
+          </div>
+          <div class="time-group">
+            <label>Closing Time</label>
+            <input type="time">
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+  </div>
+</body>
+</html>

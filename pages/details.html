@@ -3,29 +3,83 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Product Finder</title>
-  <link rel="stylesheet" href="/styles/details.style.css"> 
-  <link rel="icon" href="../assets/icons8-a-64.png">
+  <title>Product Review Page</title>
+  <link rel="stylesheet" href="/styles/details-style.css">
+  <link rel="icon" href="/assets/icons8-a-64.png">
 </head>
 <body>
+  <!-- Header -->
   <header>
-    <h1>TITLE</h1>
-  
+    <div class="logo">TITLE</div>
+ 
   </header>
 
+  <!-- Navigation -->
   <nav>
     <a href="#">HOME</a>
     <a href="#">TRACK</a>
     <a href="#">PROFILE</a>
   </nav>
 
+  <!-- Main Content -->
   <main>
     <div class="product-image"></div>
+    
     <div class="product-details">
-      <h2>PRODUCT DETAILS</h2>
-      <button class="review-btn">Review</button>
-      <button class="find-btn">FIND</button>
+      <h2>Details</h2>
+      
+      <div class="rating-section">
+        <h3>Rating and Review</h3>
+        <div class="stars">
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">★</span>
+        </div>
+      </div>
+
+      <input type="text" class="comments-input" placeholder="comments">
     </div>
   </main>
+
+  <!-- Comments Section -->
+  <div class="comments-section">
+    <div class="comment-item">
+      <div class="comment-left">
+        <div class="avatar"></div>
+        <span class="comment-text">comments in this line</span>
+      </div>
+      <div class="comment-stars">
+        <span class="comment-star">★</span>
+        <span class="comment-star">★</span>
+        <span class="comment-star">★</span>
+      </div>
+    </div>
+
+    <div class="comment-item">
+      <div class="comment-left">
+        <div class="avatar"></div>
+        <span class="comment-text">comments in this line</span>
+      </div>
+      <div class="comment-stars">
+        <span class="comment-star">★</span>
+        <span class="comment-star">★</span>
+        <span class="comment-star">★</span>
+      </div>
+    </div>
+
+    <div class="comment-item">
+      <div class="comment-left">
+        <div class="avatar"></div>
+        <span class="comment-text">comments in this line</span>
+      </div>
+      <div class="comment-stars">
+        <span class="comment-star">★</span>
+        <span class="comment-star">★</span>
+        <span class="comment-star">★</span>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
