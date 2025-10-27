@@ -6,7 +6,8 @@
 }
 
 body {
-  background: #fff;
+  background: #fff6e6;      /* warm beige background */
+  color: #3b1f00;            /* dark brown text */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -15,16 +16,17 @@ body {
 
 /* Header */
 header {
-  background: #000;
+  background: #ffb347;       /* spicy orange */
   padding: 15px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  border-bottom: 1px solid #e85d04; /* deeper orange border */
 }
 
 .logo {
-  color: #fff;
+  color: #3b1f00;
   font-size: 20px;
   font-weight: 600;
   text-transform: uppercase;
@@ -33,7 +35,7 @@ header {
 .search-bar {
   display: flex;
   align-items: center;
-  background: #d3d3d3;
+  background: #ffd966;        /* lighter warm tone */
   border-radius: 50px;
   padding: 8px 20px;
   width: 50%;
@@ -50,6 +52,7 @@ header {
   text-align: center;
   text-transform: uppercase;
   font-weight: 500;
+  color: #3b1f00;
 }
 
 .search-bar button {
@@ -62,12 +65,13 @@ header {
 .search-icon {
   width: 30px;
   height: 30px;
-  background: #fff;
+  background: #fffaf2;        /* off-white warm */
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 18px;
+  color: #3b1f00;
 }
 
 /* Navigation */
@@ -75,19 +79,19 @@ nav {
   display: flex;
   justify-content: center;
   gap: 0;
-  background: #f0f0f0;
+  background: #ffedd8;        /* light warm tone */
   padding: 15px 40px;
   width: 100%;
 }
 
 nav a {
   text-decoration: none;
-  color: #000;
+  color: #3b1f00;
   padding: 10px 80px;
-  border: 2px solid #999;
+  border: 2px solid #e85d04;
   text-align: center;
   transition: 0.3s;
-  background: #e0e0e0;
+  background: #fffaf2;        /* off-white warm */
   text-transform: uppercase;
   font-weight: 500;
   font-size: 14px;
@@ -96,7 +100,8 @@ nav a {
 }
 
 nav a:hover {
-  background: #d0d0d0;
+  background: #e85d04;
+  color: #fffaf2;
 }
 
 /* Main Content */
@@ -118,9 +123,9 @@ main {
 .profile-image {
   width: 180px;
   height: 180px;
-  background: #d3d3d3;
+  background: #ffd966;        /* lighter warm tone */
   border-radius: 50%;
-  border: 2px solid #999;
+  border: 2px solid #e85d04;
   position: relative;
   display: flex;
   align-items: center;
@@ -161,6 +166,7 @@ main {
   font-size: 18px;
   font-weight: 600;
   text-transform: uppercase;
+  color: #3b1f00;
 }
 
 .name-details p {
@@ -170,8 +176,9 @@ main {
 }
 
 .logout-btn {
-  background: #e0e0e0;
-  border: 2px solid #999;
+  background: #fffaf2;
+  color: #3b1f00;
+  border: 2px solid #e85d04;
   padding: 10px 30px;
   cursor: pointer;
   font-size: 14px;
@@ -181,12 +188,14 @@ main {
 }
 
 .logout-btn:hover {
-  background: #d0d0d0;
+  background: #e85d04;
+  color: #fffaf2;
 }
 
 .star-collection-btn {
-  background: #e0e0e0;
-  border: 2px solid #999;
+  background: #fffaf2;
+  color: #3b1f00;
+  border: none;
   padding: 12px 40px;
   cursor: pointer;
   font-size: 14px;
@@ -195,16 +204,16 @@ main {
   transition: 0.3s;
   display: inline-block;
   margin-top: 25px;
-  border: none;
 }
 
 .star-collection-btn:hover {
-  background: #d0d0d0;
+  background: #e85d04;
+  color: #fffaf2;
 }
 
 /* Feedback Section */
 .feedback-section {
-  background: #d3d3d3;
+  background: #fff3d0;         /* very light warm tone */
   padding: 40px;
   margin-top: 40px;
   width: 100%;
@@ -215,7 +224,7 @@ main {
   font-size: 16px;
   font-weight: 600;
   text-transform: uppercase;
-  color: #333;
+  color: #3b1f00;
 }
 
 /* Responsive */
@@ -296,7 +305,7 @@ main {
 
   nav a {
     padding: 8px 20px;
-    font-size: 11px;
+    font-size: 12px;
   }
 
   .profile-image {
