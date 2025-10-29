@@ -89,6 +89,11 @@ nav a:hover {
   font-size: 16px;
   color: #3b1f00;
 }
+.title{
+  /* z-index: 2; */
+  position:absolute;
+  visibility: hidden;
+}
 .cat-img{
   object-fit: fill;
   width: 120px;
@@ -113,7 +118,19 @@ nav a:hover {
   color: #3b1f00;
   overflow: hidden;
 }
-
+.categories:hover{
+  .title{
+    visibility:visible;
+    color: rgb(255, 0, 0);
+    font-size: xx-large;
+     font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+     transform: scale(2px);
+     transition: 0.5s;
+  }
+  .cat-img{
+    opacity:0.5;
+  }
+}
 /* FOR YOU SECTION */
 .for-you {
   width: 90%;
