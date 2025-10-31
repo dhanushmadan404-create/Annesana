@@ -101,13 +101,14 @@ nav a:hover {
 }
 .categories {
   display: flex;
-  justify-content:center;
+  /* justify-content:center; */
+  /* width: 90%; */
   gap: 15px;
-  margin: 10px auto 20px auto;
+ margin-left: 5%;
 }
 
 .category {
-  width: 120px;
+  width: 120px; 
   height: 120px;
   background: #fff3d0; /* very light warm tone */
   display: flex;
@@ -118,17 +119,19 @@ nav a:hover {
   color: #3b1f00;
   overflow: hidden;
 }
-.categories:hover{
+.category:hover{
   .title{
     visibility:visible;
     color: rgb(255, 0, 0);
-    font-size: xx-large;
+    font-size: x-large;
      font-family: "Poppins", "Segoe UI", Arial, sans-serif;
      transform: scale(2px);
      transition: 0.5s;
+     cursor: default;
   }
   .cat-img{
     opacity:0.5;
+    transition: 0.5s;
   }
 }
 /* FOR YOU SECTION */
