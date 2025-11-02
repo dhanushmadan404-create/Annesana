@@ -122,12 +122,13 @@ nav a:hover {
 .category:hover{
   .title{
     visibility:visible;
-    color: rgb(255, 0, 0);
+    color: black;
     font-size: x-large;
      font-family: "Poppins", "Segoe UI", Arial, sans-serif;
      transform: scale(2px);
      transition: 0.5s;
      cursor: default;
+     
   }
   .cat-img{
     opacity:0.5;
@@ -136,18 +137,19 @@ nav a:hover {
 }
 /* FOR YOU SECTION */
 .for-you {
+  /* display: flex; */
   width: 90%;
   margin: auto;
 }
 
-.for-you-buttons {
+/* .for-you-buttons {
   display: flex;
   justify-content: center;
   gap: 15px;
   margin: 15px 0;
-}
+} */
 
-.for-you-buttons button {
+/* .for-you-buttons button {
   padding: 8px 20px;
   border-radius: 20px;
   border: 1px solid #e85d04;
@@ -156,16 +158,25 @@ nav a:hover {
   cursor: pointer;
   font-weight: bold;
   transition: 0.3s;
-}
+} */
 
-.for-you-buttons button:hover {
+/* .for-you-buttons button:hover {
   background: #e85d04;
   color: #fff;
+} */
+ .image_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+.food_name{
+  position: absolute;
+  visibility: hidden;
 }
-
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  
   gap: 20px;
 }
 
@@ -180,9 +191,27 @@ nav a:hover {
 
 .card-image {
   background: #ffd966;
+  object-fit:fill;
+  width: 180px;
   height: 120px;
   border-radius: 5px;
   margin-bottom: 10px;
+}
+.card:hover{
+ .card-image{
+    opacity: 0.5;
+    transition: 0.5s;
+  }
+ .food_name{
+    visibility:visible;
+    color: black;
+    font-size: x-large;
+     font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+     transform: scale(2px);
+     transition: 0.5s;
+     cursor: default;
+     z-index: 2;
+}
 }
 
 .card-buttons {
