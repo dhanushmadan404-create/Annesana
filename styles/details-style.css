@@ -26,11 +26,13 @@ header {
   border-bottom: 1px solid #e85d04;  /* deeper orange border */
 }
 
+/* Logo */
 .logo {
-  color: #3b1f00;
-  font-size: 24px;
-  font-weight: 600;
-  text-transform: uppercase;
+  width: 100px;
+  height: 70px;
+  object-fit: contain;
+  clip-path: circle(40%);
+  transition: 0.3s ease;
 }
 
 /* Search Bar */

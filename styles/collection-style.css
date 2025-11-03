@@ -5,7 +5,13 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-
+.logo {
+  width: 100px;
+  height: 70px;
+  object-fit: contain;
+  clip-path: circle(40%);
+  transition: 0.3s ease;
+}
 /* Logo */
 /* .logo {
   width: 100px;
@@ -36,7 +42,7 @@ header {
   border-bottom: 1px solid #e85d04; /* deeper orange border */
 }
 
-.logo {
+.title{
   color: #3b1f00;
   font-size: 20px;
   font-weight: 600;
@@ -126,10 +132,10 @@ main {
 
 .page-title {
   text-align: center;
+  font-weight:bolder;
   font-size: 20px;
   font-weight: 500;
   margin-bottom: 40px;
-  text-transform: lowercase;
   color: #3b1f00;
 }
 
@@ -152,9 +158,33 @@ main {
   border: 1px solid #e85d04;
   color: #3b1f00;
 }
-
+.image_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+.food_name{
+  position: absolute;
+  visibility: hidden;
+}.image_container:hover{
+ .card-image{
+    opacity: 0.5;
+    transition: 0.5s;
+  }
+ .food_name{
+    visibility:visible;
+    color: black;
+    font-size: x-large;
+     font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+     transform: scale(2px);
+     transition: 0.5s;
+     cursor: default;
+     z-index: 2;
+}
+}
 .card-image {
-  width: 100%;
+  
+    width: 100%;
   height: 180px;
   background: #ffd966;
   border: 2px solid #999;
@@ -163,24 +193,18 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  object-fit: fill;
 }
 
-.card-image::before,
-.card-image::after {
-  content: '';
-  position: absolute;
-  background: #999;
-  width: 1px;
-  height: 100%;
-}
 
+/* 
 .card-image::before {
   transform: rotate(45deg);
 }
 
 .card-image::after {
   transform: rotate(-45deg);
-}
+} */
 
 .card-buttons {
   display: flex;
