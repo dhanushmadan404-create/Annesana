@@ -14,6 +14,9 @@ body {
   min-height: 100vh;
   width: 100%;
   padding: 20px;
+  background-image: url(/assets/NicePng_food-cart-png_7682382.png);
+  background-repeat:no-repeat   ;
+  background-size: contain;
 }
 
 /* Registration Container */
@@ -60,6 +63,7 @@ h1 {
   text-align: center;
   color: #3b1f00;
 }
+
 
 .form-group {
   margin-bottom: 20px;
