@@ -17,13 +17,13 @@
     <form>
       <div class="form-group">
         <label>Cart Name:</label>
-        <input type="text" placeholder="" >
+        <input type="text" placeholder="Enter your Name" required />
       </div>
 
       <div class="form-group">
         <label>Food Type:</label>
         <select>
-          <option value="">Select food type</option>
+          <option value="option">Select food type</option>
           <option value="vegetarian">Vegetarian</option>
           <option value="non-vegetarian">Non-Vegetarian</option>
           <option value="vegan">Vegan</option>
@@ -32,30 +32,30 @@
       </div>
 
       <div class="form-group">
-        <label>vendor Name:</label>
-        <input type="text" placeholder="">
+        <label>Vendor Name:</label>
+        <input type="text" placeholder="Enter your Cart Name" required/>
       </div>
 
       <div class="form-group">
         <label>Phone Number:</label>
-        <input type="tel" placeholder="">
+        <input type="tel" placeholder="Enter Your Number" required/>
       </div>
 
       <div class="form-group">
         <label>Location:</label>
         <div class="location-group">
           <div class="location-icon">📍</div>
-          <input type="text" placeholder="Address">
+          <input type="text" placeholder="Address"required />
         </div>
       </div>
 
       <div class="form-group">
         <label>Image</label>
-        <input type="file" class="image-upload" accept="image/*">
+        <input type="file" class="image-upload" accept="image/*" required />
       </div>
 
       <div class="form-group">
-        <textarea class="menu-list" placeholder="Menu List"></textarea>
+        <textarea class="menu-list" placeholder="Menu List" ></textarea>
       </div>
 
       <div class="operating-hours">
@@ -63,16 +63,16 @@
         <div class="time-inputs">
           <div class="time-group">
             <label>Opening Time</label>
-            <input type="time">
+            <input type="time" required>
           </div>
           <div class="time-group">
             <label>Closing Time</label>
-            <input type="time">
+            <input type="time" required>
           </div>
         </div>
       </div>
 
-      <button type="submit" class="submit-btn">Submit</button>
+      <button type="submit" class="submit-btn" onclick="window.location.href='http://127.0.0.1:5500/pages/vendor-profile.html'">Submit</button>
     </form>
   </div>
 </body>
