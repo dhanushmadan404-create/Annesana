@@ -4,7 +4,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+ font-family: Georgia, Times, 'Times New Roman', serif;
 }
 
 /* Logo */
@@ -150,18 +150,14 @@ nav a:hover {
   padding: 20px;
 }
 
-.for-you-grid {
+.trending_prod {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 15px;
   margin-top: 15px;
 }
 
-.for-you-item_1 {
-  background-image: url(/assets/food_image/items/dinner/chicken_rice.jpg);
-  background-position-y:center ;
-  background-size: 200px;
-  background-repeat: no-repeat;
+.prod_container {
   height: 100px;
   display: flex;
   align-items: center;
@@ -171,56 +167,27 @@ nav a:hover {
   transition: 0.3s;
   color: transparent;
   overflow: hidden;
-}
-.for-you-item_2 {
-  background-image: url(/assets/food_image/items/break_fast/idly.jpg);
-  background-position-y:center ;
-  background-size: 250px;
-  background-repeat: no-repeat;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid #e85d04;
-  border-radius: 12px;
-  transition: 0.3s;
-  color: transparent;
-}
-.for-you-item_3 {
-  background-image: url(/assets/food_image/items/dinner/kalan.jpg);
-  background-position-y:-1px ;
-  background-position-x:center ;
-  background-size: 210px;
-  background-repeat: no-repeat;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid #e85d04;
-  border-radius: 12px;
-  transition: 0.3s;
-  color: transparent;
-}
-.for-you-item_4 {
-  background-image: url(/assets/food_image/items/drinking/soup.jpg);
-  background-position-y:-2px ;
-  background-position-x: center;
-  background-size: 190px;
-  background-repeat: no-repeat;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid #e85d04;
-  border-radius: 12px;
-  transition: 0.3s;
-  color: transparent;
-}
 
-.for-you-grid a :hover {
-  transition: 0.2s;
-  font-size: larger;
-  color: #fff;
+}
+.prod_container b{
+  position: absolute;
+  font-size: large;
+  color: transparent;
+}
+.trending_prod a:hover{
+  .prod_container b{color: #090908;
+    transform: scale(1.2);
+    /* opacity: 0.5; */
+    transition: 0.3s;
+  }
+  .prod_container img{
+    opacity: 0.5;
+    transition: 0.3s;
+  }
+}
+.prod_container img{
+  object-fit:cover;
+  margin-top: 2px;
 }
 
 /* Sections */
