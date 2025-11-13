@@ -142,28 +142,7 @@ nav a:hover {
   margin: auto;
 }
 
-/* .for-you-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin: 15px 0;
-} */
 
-/* .for-you-buttons button {
-  padding: 8px 20px;
-  border-radius: 20px;
-  border: 1px solid #e85d04;
-  background: #fffaf2;
-  color: #3b1f00;
-  cursor: pointer;
-  font-weight: bold;
-  transition: 0.3s;
-} */
-
-/* .for-you-buttons button:hover {
-  background: #e85d04;
-  color: #fff;
-} */
  .image_container{
   display: flex;
   justify-content: center;

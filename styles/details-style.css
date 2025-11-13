@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: Georgia, Times, 'Times New Roman', serif;
 }
 
 /* Body */
@@ -160,7 +160,10 @@ main {
   font-size: 50px;
   color: #e85d04;            /* deeper orange highlight */
 }
-
+.track:hover{
+  background-color: red;
+  color: white;
+}
 /* Comments Section */
 .comments-input {
   width: 100%;
@@ -171,7 +174,6 @@ main {
   font-size: 14px;
   text-align: center;
   font-weight: 600;
-  text-transform: lowercase;
   color: #3b1f00;
 }
 
