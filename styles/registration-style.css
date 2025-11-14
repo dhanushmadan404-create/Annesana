@@ -202,7 +202,16 @@ h1 {
 .submit-btn:hover {
   background: #ffb347; /* spicy orange */
 }
-
+footer {
+  background: #ffb347;
+  padding: 20px;
+  text-align: center;
+  border-top: 2px solid #e85d04;
+  color: #3b1f00;
+  font-weight: bold;
+  position: relative;
+  top: 40px;
+}
 /* Responsive */
 @media (max-width: 600px) {
   .registration-container {

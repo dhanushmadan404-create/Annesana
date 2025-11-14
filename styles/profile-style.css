@@ -146,19 +146,22 @@ main {
 }
 
 /* Feedback Section */
-.feedback-section {
-  background: #fff3d0; /* very light warm tone */
+/* .ad-section {
+  background: #fff3d0; /* very light warm tone 
   padding: 40px;
   margin-top: 40px;
   width: 100%;
   min-height: 200px;
-}
-
-.feedback-section h3 {
-  font-size: 16px;
-  font-weight: 600;
-  text-transform: uppercase;
+} */
+footer {
+  background: #ffb347;
+  padding: 20px;
+  text-align: center;
+  border-top: 2px solid #e85d04;
   color: #3b1f00;
+  font-weight: bold;
+  position: relative;
+  top: 40px;
 }
 
 /* Responsive */

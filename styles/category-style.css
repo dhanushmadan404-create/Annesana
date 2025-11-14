@@ -6,15 +6,6 @@
   font-family: Georgia, Times, "Times New Roman", serif;
 }
 
-/* Logo */
-.logo {
-  width: 100px;
-  height: 70px;
-  object-fit: contain;
-  clip-path: circle(40%);
-  transition: 0.3s ease;
-}
-
 /* Body */
 body {
   background-color: #fff6e6; /* warm beige */
@@ -23,7 +14,6 @@ body {
   max-width: 100%;
   overflow-x: hidden;
 }
-
 /* HEADER */
 header {
   display: flex;
@@ -34,11 +24,18 @@ header {
   border-bottom: 1px solid #e85d04; /* deeper orange border */
   flex-wrap: wrap;
 }
-
 header h1 {
   font-size: 20px;
   font-weight: bold;
   color: #3b1f00;
+}
+/* Logo */
+.logo {
+  width: 100px;
+  height: 70px;
+  object-fit: contain;
+  clip-path: circle(40%);
+  transition: 0.3s ease;
 }
 
 /* NAVIGATION */
@@ -101,7 +98,7 @@ nav a:hover {
 .categories {
   display: flex;
   /* justify-content:center; */
-  /* width: 90%; */
+  /* width: 90% ; */
   gap: 15px;
   margin-left: 5%;
 }
@@ -160,7 +157,7 @@ nav a:hover {
   background: #fff3d0;
   border-radius: 10px;
   padding: 10px;
-  border: 1px solid #e85d04;
+  /* border: 1px solid #e85d04; */
   text-align: center;
   color: #3b1f00;
 }
@@ -219,6 +216,16 @@ nav a:hover {
 .find-btn:hover {
   background: #e85d04;
   color: #fff;
+}
+footer {
+  background: #ffb347;
+  padding: 20px;
+  text-align: center;
+  border-top: 2px solid #e85d04;
+  color: #3b1f00;
+  font-weight: bold;
+  position: relative;
+  top: 40px;
 }
 
 /* MEDIA / RESPONSIVE */
