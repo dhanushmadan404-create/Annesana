@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+  font-family: Georgia, Times, "Times New Roman", serif;
 }
 
 /* Logo */
@@ -74,12 +74,11 @@ nav a:hover {
   object-fit: contain;
   height: 200px;
   width: 1470px;
-  margin:7px 0px 0px 10px ;
+  margin: 7px 0px 0px 10px;
   background: linear-gradient(135deg, #ffb347, #ffcc33);
   border: 2px solid #e85d04;
   border-radius: 7px;
 }
-
 
 /* TOP CATEGORIES */
 .section-title {
@@ -87,14 +86,14 @@ nav a:hover {
   margin: 10px auto;
   font-weight: bold;
   font-size: 16px;
-  color: #3b1f00;
+  color: hsl(32, 100%, 12%);
 }
-.title{
+.title {
   /* z-index: 2; */
-  position:absolute;
+  position: absolute;
   visibility: hidden;
 }
-.cat-img{
+.cat-img {
   object-fit: fill;
   width: 120px;
   height: 120px;
@@ -104,11 +103,11 @@ nav a:hover {
   /* justify-content:center; */
   /* width: 90%; */
   gap: 15px;
- margin-left: 5%;
+  margin-left: 5%;
 }
 
 .category {
-  width: 120px; 
+  width: 120px;
   height: 120px;
   background: #fff3d0; /* very light warm tone */
   display: flex;
@@ -119,36 +118,34 @@ nav a:hover {
   color: #3b1f00;
   overflow: hidden;
 }
-.category:hover{
-  .title{
-    visibility:visible;
+.category:hover {
+  .title {
+    visibility: visible;
     color: black;
     font-size: x-large;
-     font-family: "Poppins", "Segoe UI", Arial, sans-serif;
-     transform: scale(2px);
-     transition: 0.5s;
-     cursor: default;
-     
+    font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+    transform: scale(2px);
+    transition: 0.5s;
+    cursor: default;
   }
-  .cat-img{
-    opacity:0.5;
+  .cat-img {
+    opacity: 0.5;
     transition: 0.5s;
   }
 }
 /* FOR YOU SECTION */
 .for-you {
   /* display: flex; */
-  width: 90%;
+  width: 90% auto;
   margin: auto;
 }
 
-
- .image_container{
+.image_container {
   display: flex;
   justify-content: center;
   align-items: center;
- }
-.food_name{
+}
+.food_name {
   position: absolute;
   visibility: hidden;
 }
@@ -170,27 +167,27 @@ nav a:hover {
 
 .card-image {
   background: #ffd966;
-  object-fit:fill;
+  object-fit: fill;
   width: 180px;
   height: 120px;
   border-radius: 5px;
   margin-bottom: 10px;
 }
-.card:hover{
- .card-image{
+.card:hover {
+  .card-image {
     opacity: 0.5;
     transition: 0.5s;
   }
- .food_name{
-    visibility:visible;
+  .food_name {
+    visibility: visible;
     color: black;
     font-size: x-large;
-     font-family: "Poppins", "Segoe UI", Arial, sans-serif;
-     transform: scale(2px);
-     transition: 0.5s;
-     cursor: default;
-     z-index: 2;
-}
+    font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+    transform: scale(2px);
+    transition: 0.5s;
+    cursor: default;
+    z-index: 2;
+  }
 }
 
 .card-buttons {
@@ -231,7 +228,7 @@ nav a:hover {
     height: 60px;
     margin: 0 auto 10px auto;
   }
-  
+
   .search-bar input {
     width: 180px;
   }
@@ -246,5 +243,11 @@ nav a:hover {
   .category {
     width: 80%;
     height: auto; /* adjust automatically */
+  }
+}
+@media (max-width: 1024px) {
+  .banner {
+    max-width: 100%;
+    margin: 7px 10px 0;
   }
 }

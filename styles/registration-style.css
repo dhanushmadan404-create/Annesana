@@ -2,13 +2,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-font-family: "Poppins", "Segoe UI", Arial, sans-serif;
-
+  font-family: Georgia, Times, "Times New Roman", serif;
 }
 
 body {
-  background: #fff6e6;      /* warm beige background */
-  color: #3b1f00;            /* dark brown text */
+  background: #fff6e6; /* warm beige background */
+  color: #3b1f00; /* dark brown text */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,7 +15,7 @@ body {
   width: 100%;
   padding: 20px;
   background-image: url(/assets/NicePng_food-cart-png_7682382.png);
-  background-repeat:no-repeat   ;
+  background-repeat: no-repeat;
   background-size: contain;
 }
 
@@ -41,7 +40,7 @@ body {
 .back-btn {
   width: 40px;
   height: 40px;
-  border: 2px solid #e85d04;      /* deep orange border */
+  border: 2px solid #e85d04; /* deep orange border */
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -49,12 +48,12 @@ body {
   cursor: pointer;
   font-size: 20px;
   font-weight: bold;
-  background: #fffaf2;             /* off-white warm */
+  background: #fffaf2; /* off-white warm */
   transition: 0.3s;
 }
 
 .back-btn:hover {
-  background: #ffd966;             /* lighter warm tone */
+  background: #ffd966; /* lighter warm tone */
 }
 
 h1 {
@@ -64,7 +63,6 @@ h1 {
   text-align: center;
   color: #3b1f00;
 }
-
 
 .form-group {
   margin-bottom: 20px;
@@ -83,7 +81,7 @@ h1 {
 .form-group textarea {
   width: 100%;
   padding: 12px 15px;
-  background: #fff3d0;         /* very light warm tone */
+  background: #fff3d0; /* very light warm tone */
   border: none;
   border-radius: 5px;
   font-size: 14px;
@@ -108,7 +106,7 @@ h1 {
 .location-icon {
   width: 40px;
   height: 40px;
-  background: #fffaf2;        /* off-white warm */
+  background: #fffaf2; /* off-white warm */
   border-radius: 5px;
   display: flex;
   align-items: center;
@@ -189,7 +187,7 @@ h1 {
   width: 100%;
   max-width: 200px;
   padding: 12px 30px;
-  background: #e85d04;        /* deep accent orange */
+  background: #e85d04; /* deep accent orange */
   border: none;
   border-radius: 5px;
   font-size: 16px;
@@ -202,7 +200,7 @@ h1 {
 }
 
 .submit-btn:hover {
-  background: #ffb347;        /* spicy orange */
+  background: #ffb347; /* spicy orange */
 }
 
 /* Responsive */

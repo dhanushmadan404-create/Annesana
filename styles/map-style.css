@@ -3,13 +3,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: Georgia, Times, "Times New Roman", serif;
 }
 
 /* Body */
 body {
-  background: #fff6e6;      /* warm beige background */
-  color: #3b1f00;           /* dark brown text */
+  background: #fff6e6; /* warm beige background */
+  color: #3b1f00; /* dark brown text */
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -17,7 +17,7 @@ body {
 
 /* Header */
 header {
-  background: #ffb347;       /* spicy orange */
+  background: #ffb347; /* spicy orange */
   padding: 15px 40px;
   display: flex;
   justify-content: space-between;
@@ -34,12 +34,11 @@ header {
   transition: 0.3s ease;
 }
 
-
 /* Search Bar */
 .search-bar {
   display: flex;
   align-items: center;
-  background: #ffd966;       /* lighter warm tone */
+  background: #ffd966; /* lighter warm tone */
   border-radius: 50px;
   padding: 8px 20px;
   width: 50%;
@@ -69,7 +68,7 @@ header {
 .search-icon {
   width: 30px;
   height: 30px;
-  background: #fffaf2;        /* off-white warm */
+  background: #fffaf2; /* off-white warm */
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -83,7 +82,7 @@ nav {
   display: flex;
   justify-content: center;
   gap: 0;
-  background: #ffedd8;        /* light warm tone */
+  background: #ffedd8; /* light warm tone */
   padding: 15px 40px;
   width: 100%;
   border-top: 1px solid #e85d04;
@@ -97,7 +96,7 @@ nav a {
   border: 2px solid #e85d04;
   text-align: center;
   transition: 0.3s;
-  background: #fffaf2;        /* off-white warm */
+  background: #fffaf2; /* off-white warm */
   text-transform: uppercase;
   font-weight: 500;
   font-size: 14px;
@@ -115,7 +114,7 @@ nav a:hover {
   position: relative;
   width: 100%;
   height: calc(100vh - 120px);
-  background: #fff3d0;         /* very light warm tone */
+  background: #fff3d0; /* very light warm tone */
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -126,13 +125,19 @@ nav a:hover {
 }
 
 .diagonal-line::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   right: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom right, transparent 49.5%, #e85d04 49.5%, #e85d04 50.5%, transparent 50.5%);
+  background: linear-gradient(
+    to bottom right,
+    transparent 49.5%,
+    #e85d04 49.5%,
+    #e85d04 50.5%,
+    transparent 50.5%
+  );
 }
 
 /* Responsive */
