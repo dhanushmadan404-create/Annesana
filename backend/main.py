@@ -1,28 +1,32 @@
-from fastapi import FastAPI, Depends
-from sqlalchemy.orm import Session
-from DB.database import SessionLocal, engine, Base
-from schemas.user import UserBase, UserResponse
-from models.user import Users
+from fastapi import FastAPI
+from DB.database import engine, Base
 
-app = FastAPI()
+
+# import vendor routers
+from routers.vendor import router as vendors_router
+
+# import favorites routers
+from routers.favorites import router as favorites_router
+
+# import review routers
+from routers.review import router as review_router
+
+from routers.user import router as users_router
+
+app = FastAPI(title="Annesana API")
+
+
+# create tables (only for development; in production use migrations)
 Base.metadata.create_all(bind=engine)
 
-def connect_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
 
-@app.post("/users", response_model=UserResponse)
-def create_user(new_user: UserBase, dbs: Session = Depends(connect_db)):
-    u = Users(
-        email=new_user.email,
-        created_at=new_user.created_at,
-        password_hash=new_user.password_hash,
-        role=new_user.role
-    )
-    dbs.add(u)
-    dbs.commit()
-    dbs.refresh(u)
-    return u
+app.include_router(vendors_router, prefix="/vendors", tags=["vendors"])
+
+app.include_router(favorites_router, prefix="/favorites", tags=["Favorites"])
+
+
+app.include_router(review_router, prefix="/reviews", tags=["Reviews"])
+
+
+# Routers
+app.include_router(users_router, prefix="/users", tags=["Users"])

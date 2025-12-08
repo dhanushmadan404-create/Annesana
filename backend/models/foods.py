@@ -1,10 +1,11 @@
-# from DB.database import Base
-# from sqlalchemy import Column,String,Integer,Boolean,TIMESTAMP,ForeignKey,Numeric
+from DB.database import Base
+from sqlalchemy import Column, Integer, String
+from sqlalchemy.orm import relationship
 
-# class foods(Base):
-#     __tablename__="foods"
 
-#     food_id=Column(Integer,index=True, primary_key=True)
-#     vendor_id=Column(Integer,ForeignKey("vendors.vendor_id"))
-#     food_name=Column(String)
-#     food_image=Column(String)
+class Food(Base):
+    __tablename__ = "foods"
+    food_id = Column(Integer, primary_key=True, index=True)
+    food_name = Column(String, nullable=False)
+    food_image = Column(String, nullable=True)
+    vendors = relationship("Vendor", back_populates="food")
