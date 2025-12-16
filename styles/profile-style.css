@@ -6,6 +6,20 @@ font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   text-decoration: none;
 }
 
+/* Logo */
+.logo-align{
+  display: flex;
+  
+}
+.logo {
+  width: 200px;
+  height: 70px;
+object-fit: cover;
+    background: transparent;
+    mix-blend-mode: multiply;
+  transition: 0.3s ease;
+}
+
 body {
   background: #fff6e6; /* warm beige background */
   color: #3b1f00; /* dark brown text */
@@ -36,18 +50,16 @@ header h1 {
   display: flex;
   
 }
-.logo {
-  width: 100px;
-  height: 70px;
-  object-fit: contain;
-  clip-path: circle(40%);
 
+.logo {
+  width: 200px;
+  height: 70px;
+object-fit: cover;
+    background: transparent;
+    mix-blend-mode: multiply;
   transition: 0.3s ease;
 }
-.logo-align{
-  display: flex;
-  
-}
+
 /* Search Bar */
 .search-bar ,.right-align{
   display: flex;

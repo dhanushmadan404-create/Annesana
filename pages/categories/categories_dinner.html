@@ -9,30 +9,32 @@
   </head>
   <body>
     <!-- head -->
-     <header>
-      <div class="logo-align">
-      <img class="logo" src="/assets/logo.png" alt="not able to see" />
-      <h1>Annesana</h1>
-      </div>
-      <nav>
-        <a href="#">Home</a>
-        <a href="/pages/map.html">Track</a>
-        <a href="/pages/profile.html">Profile</a>
-      </nav>
-      <div class="right-align right">
-        <a href="/pages/profile.html">Log in</a>
-      <div class="search-bar">
-        <input type="text" placeholder="Search..." />
-        <button>🔍</button>
-      </div>
+   <header>
+     <div class="header_container">
+
+       <img class="logo" src="/assets/annesana.png" alt="not able to see" onclick="window.location.href='/index.html'" />
+       
+       <img class="logo location" src="/assets/image.png" alt="not available" onclick="window.location.href='/pages/map.html'">
+       
+       
+       <div class="right-align right">
+         <a href="#" id="login">Log in</a>
+         <div class="search-bar">
+           <input type="text" placeholder="Search..." />
+           <button>🔍</button>
+          </div>
+        </div>
       </div>
     </header>
+
+
 <!-- head -->
  <main>
 
     <div class="section-title">TOP CATEGORIES</div>
+    
     <div class="categories">
-      <a href="http://127.0.0.1:5500/pages/categories/categories_dinner.html"
+      <a href="./categories_dinner.html"
         ><div class="category">
           <img
             src="/assets/food_image/Categories/dinner.webp"
@@ -41,7 +43,7 @@
           /><b class="title">Dinner</b>
         </div></a
       >
-      <a href="http://127.0.0.1:5500/pages/categories/category_breakFast.html"
+      <a href="./category_breakFast.html"
         ><div class="category">
           <img
             src="/assets/food_image/Categories/break_fast.jpg"
@@ -50,7 +52,7 @@
           /><b class="title">BreakFast</b>
         </div></a
       >
-      <a href="http://127.0.0.1:5500/pages/categories/categories_drinking.html"
+      <a href="./categories_drinking.html"
         ><div class="category">
           <img
             src="/assets/food_image/Categories/drinking.JPG"
@@ -68,7 +70,7 @@
           /><b class="title">Lunch</b>
         </div></a
       >
-      <a href="http://127.0.0.1:5500/pages/categories/categories_snacks.html"
+      <a href="./categories_snacks.html"
         ><div class="category">
           <img
             src="/assets/food_image/Categories/snacks.jpg"
@@ -80,6 +82,7 @@
     </div>
 
     <div class="section-title">RECOMMENDED</div>
+    <div class="for-you">
       <div class="card-grid">
         <div class="card">
           <div class="image_container">
@@ -177,6 +180,7 @@
             </button>
           </div>
         </div>
+      </div>
       </div>
   </main>
   <!-- <footer>

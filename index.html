@@ -4,32 +4,47 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Annesana</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <link rel="icon" href="./assets/icons8-a-64.png" />
     <link rel="stylesheet" href="./index-style.css" />
   </head>
   <body>
     <header>
-      <div class="logo-align">
-      <img class="logo" src="/assets/logo.png" alt="not able to see" />
-      <h1>Annesana</h1>
-      </div>
-      <nav>
-        <a href="#">Home</a>
-        <a href="/pages/map.html">Track</a>
-        <a href="/pages/profile.html">Profile</a>
-      </nav>
-      <div class="right-align right">
-        <a href="/pages/profile.html">Log in</a>
-      <div class="search-bar">
-        <input type="text" placeholder="Search..." />
-        <button>🔍</button>
-      </div>
+      <div class="header_container">
+        <img
+          class="logo"
+          src="assets/annesana.png"
+          alt="not able to see"
+          onclick="window.location.href='/index.html'"
+        />
+
+        <img
+          class="logo location"
+          src="/assets/image.png"
+          alt="not available"
+          onclick="window.location.href='/pages/map.html'"
+        />
+
+        <div class="right-align right">
+          <a href="#" id="profile">profile</a>
+          <a href="#" id="login">Log in</a>
+          <div class="search-bar">
+            <input type="text" placeholder="Search..." />
+            <button>🔍</button>
+          </div>
+        </div>
       </div>
     </header>
     <main>
-    
-     
-<!-- trending -->
+      <!-- trending -->
       <div class="trending-section">
         <div class="tabs">
           <h2>Trending</h2>
@@ -37,66 +52,81 @@
 
         <div class="trending_prod">
           <a href="/pages/item/details_chicken Rice.html" target="_self">
-            <div class="prod_container"><img src="/assets/food_image/items/dinner/chicken_rice.jpg" alt="sorry_404-error" height="120px" width="200px"><b>Chicken Rice</b></div>
+            <div class="prod_container">
+              <img
+                src="/assets/food_image/items/dinner/chicken_rice.jpg"
+                alt="sorry_404-error"
+                height="120px"
+                width="200px"
+              /><b>Chicken Rice</b>
+            </div>
           </a>
           <a href="/pages/item/details_fired_fish.html" target="_self">
-            <div class="prod_container"><img src="/assets/food_image/items/dinner/fired_fish.jpg" alt="sorry_404-error" height="120px" width="200px"><b>Fired Fish</b></div>
+            <div class="prod_container">
+              <img
+                src="/assets/food_image/items/dinner/fired_fish.jpg"
+                alt="sorry_404-error"
+                height="120px"
+                width="200px"
+              /><b>Fired Fish</b>
+            </div>
           </a>
           <a href="/pages/item/details_dosa_idly.html" target="_self">
-            <div class="prod_container"><img src="/assets/food_image/items/break_fast/dosa-idly.jpg" alt="sorry_404-error" height="120px" width="200px"><b>Dosa Idly</b></div>
+            <div class="prod_container">
+              <img
+                src="/assets/food_image/items/break_fast/dosa-idly.jpg"
+                alt="sorry_404-error"
+                height="120px"
+                width="200px"
+              /><b>Dosa Idly</b>
+            </div>
           </a>
           <a href="/pages/item/details_rose_milk.html" target="_self">
-            <div class="prod_container"><img src="/assets/food_image/items/drinking/rose-milk-recipe.webp" alt="sorry_404-error" height="120px" width="200px"><b>Rose Milk</b></div>
+            <div class="prod_container">
+              <img
+                src="/assets/food_image/items/drinking/rose-milk-recipe.webp"
+                alt="sorry_404-error"
+                height="120px"
+                width="200px"
+              /><b>Rose Milk</b>
+            </div>
           </a>
         </div>
       </div>
+<!-- profile -->
+ <div  id="profileDetails"><div id="details"></div></div>
+      <!-- form  -->
+
+      <div id="loginForm">
+        <div class="google">
+          <form id="UserData" >
+
+            <h1>loginForm</h1>
+            <label for="UserEmail">Email</label><br/>
+            <input id="UserEmail" type="text" name="UserEmail" placeholder="Enter your Email" minlength="13" required/><br/>
+            <label for="UserPassword">Password</label><br/>
+            <input id="UserPassword" type="password" name="userPassword" placeholder="Enter your Password" required><br/>
+            <label for="role">Role</label>
+            <select name="role" id="role"><option value="user">user</option>
+            <option value="vendor">vendor</option></select><br/>
+            <button id="get" type="submit">Submit</button>
+          </div>
+        </form>
+        </div>
+      <!-- endForm -->
+      <h2 class="categories">Categories</h2>
+
       <!-- categories -->
-      <div class="tabs"><h2>Snacks</h2></div>
-      <a href="http://127.0.0.1:5500/pages/categories/categories_snacks.html" target="_self">
-        <img
-          class="section"
-          src="/assets/food_image/Categories/snacks.jpg"
-          alt="not able to see this"
-        />
-      </a>
-      
-      <div class="tabs"><h2>Break Fast</h2></div>
-      <a href="http://127.0.0.1:5500/pages/categories/category_breakFast.html" target="_self">
-        <img
-          class="section"
-          src="/assets/food_image/Categories/break_fast.jpg"
-          alt="not able to see this"
-        />
-      </a>
+      <div class="collection_category">
+        <!-- <div class="option"></div> -->
+        <img src="" alt="" id="book" onclick="" />
 
-      <div class="tabs"><h2>Dinner</h2></div>
-      <a href="http://127.0.0.1:5500/pages/categories/categories_dinner.html" target="_self">
-        <img
-          class="section"
-          src="/assets/food_image/Categories/dinner.webp"
-          alt="not able to see this"
-        />
-      </a>
-
-      <div class="tabs"><h2>Drink</h2></div>
-      <a href="http://127.0.0.1:5500/pages/categories/categories_drinking.html" target="_self">
-        <img
-          class="section"
-          src="/assets/food_image/Categories/drinking.JPG"
-          alt="not able to see this"
-        />
-      </a>
-   <div class="tabs"><h2>Lunch</h2></div>
-      <a href="http://127.0.0.1:5500/pages/categories/categories_lunch.html" target="_self">
-        <img
-          class="section"
-          src="/assets/food_image/Categories/lunch.avif"
-          alt="not able to see this"
-        />
-      </a>
+        <button id="move"></button>
+      </div>
     </main>
     <footer>
       <small>© 2025 Annesana. All Rights Reserved.</small>
     </footer>
+    <script src="/scripts/index.js"></script>
   </body>
 </html>
