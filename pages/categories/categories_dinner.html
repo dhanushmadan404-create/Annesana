@@ -9,183 +9,173 @@
   </head>
   <body>
     <!-- head -->
-   <header>
-     <div class="header_container">
+    <header>
+      <div class="header_container">
+        <img
+          class="logo"
+          src="/assets/annesana.png"
+          alt="not able to see"
+          onclick="window.location.href='/index.html'"
+        />
 
-       <img class="logo" src="/assets/annesana.png" alt="not able to see" onclick="window.location.href='/index.html'" />
-       
-       <img class="logo location" src="/assets/image.png" alt="not available" onclick="window.location.href='/pages/map.html'">
-       
-       
-       <div class="right-align right">
-         <a href="#" id="login">Log in</a>
-         <div class="search-bar">
-           <input type="text" placeholder="Search..." />
-           <button>🔍</button>
+        <img
+          class="logo location"
+          src="/assets/image.png"
+          alt="not available"
+          onclick="window.location.href='/pages/map.html'"
+        />
+
+        <div class="right-align right">
+          <a href="#" id="login">Log in</a>
+          <div class="search-bar">
+            <input type="text" placeholder="Search..." />
+            <button>🔍</button>
           </div>
         </div>
       </div>
     </header>
 
+    <!-- head -->
+    <main>
+      <div class="section-title">TOP CATEGORIES</div>
 
-<!-- head -->
- <main>
-
-    <div class="section-title">TOP CATEGORIES</div>
-    
-    <div class="categories">
-      <a href="./categories_dinner.html"
-        ><div class="category">
-          <img
-            src="/assets/food_image/Categories/dinner.webp"
-            alt="sorry_404-error"
-            class="cat-img"
-          /><b class="title">Dinner</b>
-        </div></a
-      >
-      <a href="./category_breakFast.html"
-        ><div class="category">
-          <img
-            src="/assets/food_image/Categories/break_fast.jpg"
-            alt="sorry_404-error"
-            class="cat-img"
-          /><b class="title">BreakFast</b>
-        </div></a
-      >
-      <a href="./categories_drinking.html"
-        ><div class="category">
-          <img
-            src="/assets/food_image/Categories/drinking.JPG"
-            alt="sorry_404-error"
-            class="cat-img"
-          /><b class="title">Juice</b>
-        </div></a
-      >
-      <a href="./categories_lunch.html"
-        ><div class="category">
-          <img
-            src="/assets/food_image/Categories/lunch.avif"
-            alt="sorry_404-error"
-            class="cat-img"
-          /><b class="title">Lunch</b>
-        </div></a
-      >
-      <a href="./categories_snacks.html"
-        ><div class="category">
-          <img
-            src="/assets/food_image/Categories/snacks.jpg"
-            alt="sorry_404-error"
-            class="cat-img"
-          /><b class="title">Snacks</b>
-        </div></a
-      >
-    </div>
-
-    <div class="section-title">RECOMMENDED</div>
-    <div class="for-you">
-      <div class="card-grid">
-        <div class="card">
-          <div class="image_container">
-            <h2 class="food_name">Biriyani</h2>
+      <div class="categories">
+        <a href="./categories_dinner.html"
+          ><div class="category">
             <img
-              src="/assets/food_image/items/dinner/Biryani.jpg"
-              class="card-image"
-            />
-          </div>
-          <div class="card-buttons">
-            <button
-              class="details-btn"
-              onclick="window.location.href='../item/details_biriyani.html'"
-            >
-              DETAILS
-            </button>
-            <button
-              class="find-btn"
-              onclick="category('biriyani')"
-            >
-              FIND
-            </button>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="image_container">
-            <h2 class="food_name">Chicken Rice</h2>
+              src="/assets/food_image/Categories/dinner.webp"
+              alt="sorry_404-error"
+              class="cat-img"
+            /><b class="title">Dinner</b>
+          </div></a
+        >
+        <a href="./category_breakFast.html"
+          ><div class="category">
             <img
-              src="/assets/food_image/items/dinner/chicken_rice.jpg"
-              class="card-image"
-            />
-          </div>
-          <div class="card-buttons">
-            <button
-              class="details-btn"
-              onclick="window.location.href='../item/details_ChickenRice.html'"
-            >
-              DETAILS
-            </button>
-            <button
-              class="find-btn"
-              onclick="category('chickenrice')"
-            >
-              FIND
-            </button>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="image_container">
-            <h2 class="food_name">Fired Fish</h2>
-
+              src="/assets/food_image/Categories/break_fast.jpg"
+              alt="sorry_404-error"
+              class="cat-img"
+            /><b class="title">BreakFast</b>
+          </div></a
+        >
+        <a href="./categories_drinking.html"
+          ><div class="category">
             <img
-              src="/assets/food_image/items/dinner/fired_fish.jpg"
-              class="card-image"
-            />
-          </div>
-          <div class="card-buttons">
-            <button
-              class="details-btn"
-              onclick="window.location.href='../item/details_fired_fish.html'"
-            >
-              DETAILS
-            </button>
-            <button
-              class="find-btn"
-              onclick="category('fish')"
-            >
-              FIND
-            </button>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="image_container">
-            <h2 class="food_name">Keema</h2>
+              src="/assets/food_image/Categories/drinking.JPG"
+              alt="sorry_404-error"
+              class="cat-img"
+            /><b class="title">Juice</b>
+          </div></a
+        >
+        <a href="./categories_lunch.html"
+          ><div class="category">
             <img
-              src="/assets/food_image/items/dinner/keema.jpg"
-              class="card-image"
-            />
+              src="/assets/food_image/Categories/lunch.avif"
+              alt="sorry_404-error"
+              class="cat-img"
+            /><b class="title">Lunch</b>
+          </div></a
+        >
+        <a href="./categories_snacks.html"
+          ><div class="category">
+            <img
+              src="/assets/food_image/Categories/snacks.jpg"
+              alt="sorry_404-error"
+              class="cat-img"
+            /><b class="title">Snacks</b>
+          </div></a
+        >
+      </div>
+
+      <div class="section-title">RECOMMENDED</div>
+      <div class="for-you">
+        <div class="card-grid">
+          <div class="card">
+            <div class="image_container">
+              <h2 class="food_name">Biriyani</h2>
+              <img
+                src="/assets/food_image/items/dinner/Biryani.jpg"
+                class="card-image"
+              />
+            </div>
+            <div class="card-buttons">
+              <button
+                class="details-btn"
+                onclick="window.location.href='../item/details_biriyani.html'"
+              >
+                DETAILS
+              </button>
+              <button class="find-btn" onclick="category('biriyani')">
+                FIND
+              </button>
+            </div>
           </div>
-          <div class="card-buttons">
-            <button
-              class="details-btn"
-              onclick="window.location.href='../item/details_keema.html'"
-            >
-              DETAILS
-            </button>
-            <button
-              class="find-btn"
-              onclick="category('keema')"
-            >
-              FIND
-            </button>
+
+          <div class="card">
+            <div class="image_container">
+              <h2 class="food_name">Chicken Rice</h2>
+              <img
+                src="/assets/food_image/items/dinner/chicken_rice.jpg"
+                class="card-image"
+              />
+            </div>
+            <div class="card-buttons">
+              <button
+                class="details-btn"
+                onclick="window.location.href='../item/details_ChickenRice.html'"
+              >
+                DETAILS
+              </button>
+              <button class="find-btn" onclick="category('chickenrice')">
+                FIND
+              </button>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="image_container">
+              <h2 class="food_name">Fired Fish</h2>
+
+              <img
+                src="/assets/food_image/items/dinner/fired_fish.jpg"
+                class="card-image"
+              />
+            </div>
+            <div class="card-buttons">
+              <button
+                class="details-btn"
+                onclick="window.location.href='../item/details_fired_fish.html'"
+              >
+                DETAILS
+              </button>
+              <button class="find-btn" onclick="category('fish')">FIND</button>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="image_container">
+              <h2 class="food_name">Keema</h2>
+              <img
+                src="/assets/food_image/items/dinner/keema.jpg"
+                class="card-image"
+              />
+            </div>
+            <div class="card-buttons">
+              <button
+                class="details-btn"
+                onclick="window.location.href='../item/details_keema.html'"
+              >
+                DETAILS
+              </button>
+              <button class="find-btn" onclick="category('keema')">FIND</button>
+            </div>
           </div>
         </div>
       </div>
-      </div>
-  </main>
-  <footer>
-    <small>© 2025 Annesana. All Rights Reserved.</small>
-  </footer>
-   <script src="/scripts/category.js"></script>
-</body>
+    </main>
+    <footer>
+      <small>© 2025 Annesana. All Rights Reserved.</small>
+    </footer>
+    <script src="/scripts/category.js"></script>
+  </body>
 </html>

@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   text-decoration: none;
 }
 
@@ -26,33 +26,31 @@ header {
   border-bottom: 3px solid #e85d04;
   flex-wrap: wrap;
   overflow-y: hidden;
-  
 }
-.header_container{
-    display: flex;
+.header_container {
+  display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
   bottom: 20px;
-
 }
-.location{
+.location {
   position: relative;
   left: 80px;
   border-radius: 50%;
   box-shadow: 5px 10px 20px rgb(46, 46, 46);
 }
-.location:hover{
+.location:hover {
   border: #d9480f solid 10px;
 }
 
 /* Search Bar */
-.search-bar ,.right-align{
+.search-bar,
+.right-align {
   display: flex;
   align-items: center;
-  
 }
-.right{
+.right {
   gap: 20px;
 }
 
@@ -65,10 +63,10 @@ header {
   background: #fff;
   color: #3b1f00;
 }
-.right-align a{
+.right-align a {
   color: #3f3f3e;
 }
-.right-align a:hover{
+.right-align a:hover {
   color: #090908;
 }
 
@@ -89,11 +87,10 @@ header {
 .logo {
   width: 100px;
   height: 100px;
-    background: transparent;
-    mix-blend-mode: multiply;
+  background: transparent;
+  mix-blend-mode: multiply;
   transition: 0.3s ease;
 }
-
 
 /* TOP CATEGORIES */
 .section-title {
@@ -133,9 +130,9 @@ header {
   overflow: hidden;
 }
 .category:hover {
- box-shadow: 10px 10px 15px grey;
-   border-radius: 12px;
-   transition: 0.5s;
+  box-shadow: 10px 10px 15px grey;
+  border-radius: 12px;
+  transition: 0.5s;
   .title {
     visibility: visible;
     color: black;
@@ -151,7 +148,6 @@ header {
   }
 }
 
-
 .image_container {
   display: flex;
   justify-content: center;
@@ -161,8 +157,8 @@ header {
   position: absolute;
   visibility: hidden;
 }
-.for-you{
-    height: 500px;
+.for-you {
+  height: 500px;
 }
 .card-grid {
   display: grid;
@@ -175,7 +171,6 @@ header {
   font-weight: bold;
   font-size: 16px;
   color: hsl(32, 100%, 12%);
-  
 }
 
 .card {
@@ -197,9 +192,9 @@ header {
   margin-bottom: 10px;
 }
 .card:hover {
-   box-shadow: 10px 10px 15px grey;
-   border-radius: 12px;
-   transition: 0.5s;
+  box-shadow: 10px 10px 15px grey;
+  border-radius: 12px;
+  transition: 0.5s;
   .card-image {
     opacity: 0.5;
     transition: 0.5s;

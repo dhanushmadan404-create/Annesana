@@ -8,7 +8,7 @@
     <link rel="icon" href="/assets/icons8-a-64.png" />
   </head>
   <body>
-  <header>
+    <header>
       <div class="header_container">
         <img
           class="logo"
@@ -25,7 +25,6 @@
         />
 
         <div class="right-align right">
-   
           <div class="search-bar">
             <input type="text" placeholder="Search..." />
             <button>🔍</button>
@@ -43,32 +42,29 @@
       <div class="product-details">
         <h2>Bhaji</h2>
 
-   <form id="commentForm">
-  <textarea
-    id="comment"
-    name="comment"
-    placeholder="Enter your comment"
-    required
-  ></textarea>
+        <form id="commentForm">
+          <textarea
+            id="comment"
+            name="comment"
+            placeholder="Enter your comment"
+            required
+          ></textarea>
 
-  <select id="stars" required>
-    <option value="">Select rating</option>
-    <option value="1">⭐</option>
-    <option value="2">⭐⭐</option>
-    <option value="3">⭐⭐⭐</option>
-    <option value="4">⭐⭐⭐⭐</option>
-    <option value="5">⭐⭐⭐⭐⭐</option>
-  </select>
+          <select id="stars" required>
+            <option value="">Select rating</option>
+            <option value="1">⭐</option>
+            <option value="2">⭐⭐</option>
+            <option value="3">⭐⭐⭐</option>
+            <option value="4">⭐⭐⭐⭐</option>
+            <option value="5">⭐⭐⭐⭐⭐</option>
+          </select>
 
-  <button type="submit" id="Send">Submit</button>
-</form>
+          <button type="submit" id="Send">Submit</button>
+        </form>
 
-<div id="comments"></div>
+        <div id="comments"></div>
 
-        <button
-          class="comments-input track"
-          onclick="category('bhaji')"
-        >
+        <button class="comments-input track" onclick="category('bhaji')">
           Track
         </button>
       </div>
@@ -76,12 +72,11 @@
 
     <!-- Comments Section -->
     <footer>
+      <h1>Comments</h1>
+      <div id="comments-section"></div>
+    </footer>
+    <script src="/scripts/item.js"></script>
 
-       <h1>Comments</h1>
-       <div id="comments-section"></div>
-      </footer>
-  <script src="/scripts/item.js"></script>
-
-  <script src="/scripts/category.js"></script>
+    <script src="/scripts/category.js"></script>
   </body>
 </html>

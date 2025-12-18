@@ -26,7 +26,6 @@
         />
 
         <div class="right-align right">
-   
           <div class="search-bar">
             <input type="text" placeholder="Search..." />
             <button>🔍</button>
@@ -35,7 +34,6 @@
       </div>
     </header>
 
-    
     <!-- Main Content -->
     <main>
       <img
@@ -56,32 +54,29 @@
             <span class="star">★</span>
           </div>
         </div> -->
-<form id="commentForm">
-  <textarea
-    id="comment"
-    name="comment"
-    placeholder="Enter your comment"
-    required
-  ></textarea>
+        <form id="commentForm">
+          <textarea
+            id="comment"
+            name="comment"
+            placeholder="Enter your comment"
+            required
+          ></textarea>
 
-  <select id="stars" required>
-    <option value="">Select rating</option>
-    <option value="1">⭐</option>
-    <option value="2">⭐⭐</option>
-    <option value="3">⭐⭐⭐</option>
-    <option value="4">⭐⭐⭐⭐</option>
-    <option value="5">⭐⭐⭐⭐⭐</option>
-  </select>
+          <select id="stars" required>
+            <option value="">Select rating</option>
+            <option value="1">⭐</option>
+            <option value="2">⭐⭐</option>
+            <option value="3">⭐⭐⭐</option>
+            <option value="4">⭐⭐⭐⭐</option>
+            <option value="5">⭐⭐⭐⭐⭐</option>
+          </select>
 
-  <button type="submit" id="Send">Submit</button>
-</form>
+          <button type="submit" id="Send">Submit</button>
+        </form>
 
-<div id="comments"></div>
+        <div id="comments"></div>
 
-        <button
-          class="comments-input track"
-          onclick="category('adai')"
-        >
+        <button class="comments-input track" onclick="category('adai')">
           Track
         </button>
       </div>
@@ -89,11 +84,10 @@
 
     <!-- Comments Section -->
     <footer>
-
-       <h1>Comments</h1>
-       <div id="comments-section"></div>
-      </footer>
-  <script src="/scripts/item.js"></script>
-  <script src="/scripts/category.js"></script>
-    </body>
+      <h1>Comments</h1>
+      <div id="comments-section"></div>
+    </footer>
+    <script src="/scripts/item.js"></script>
+    <script src="/scripts/category.js"></script>
+  </body>
 </html>

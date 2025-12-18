@@ -8,10 +8,8 @@
     <link rel="icon" href="/assets/icons8-a-64.png" />
   </head>
   <body>
-    <header>  
-    </header>
+    <header></header>
 
-    
     <main>
       <div class="registration-container">
         <div class="header">
@@ -27,7 +25,13 @@
         <form>
           <div class="form-group">
             <label>Vendor Name:</label>
-            <input id="username" type="text" placeholder="Enter your Name" required minlength="3"/>
+            <input
+              id="username"
+              type="text"
+              placeholder="Enter your Name"
+              required
+              minlength="3"
+            />
           </div>
 
           <div class="form-group">
@@ -41,11 +45,14 @@
             </select>
           </div>
 
-      
-
           <div class="form-group">
             <label>Phone Number:</label>
-            <input id="number" type="tel" placeholder="Enter Your Number" required minlength="10"
+            <input
+              id="number"
+              type="tel"
+              placeholder="Enter Your Number"
+              required
+              minlength="10"
             />
           </div>
 
@@ -59,11 +66,22 @@
 
           <div class="form-group">
             <label>Image</label>
-            <input id="image" type="file" class="image-upload" accept="image/*" required />
+            <input
+              id="image"
+              type="file"
+              class="image-upload"
+              accept="image/*"
+              required
+            />
           </div>
 
           <div class="form-group">
-            <textarea  id="menu_list" class="menu-list" placeholder="Menu List" minlength="10"></textarea>
+            <textarea
+              id="menu_list"
+              class="menu-list"
+              placeholder="Menu List"
+              minlength="10"
+            ></textarea>
           </div>
 
           <div class="operating-hours">
@@ -71,7 +89,7 @@
             <div class="time-inputs">
               <div class="time-group">
                 <label>Opening Time</label>
-                <input  type="time" required />
+                <input type="time" required />
               </div>
               <div class="time-group">
                 <label>Closing Time</label>
@@ -81,7 +99,7 @@
           </div>
 
           <button
-          id="submit"
+            id="submit"
             type="submit"
             class="submit-btn"
             onclick="window.location.href='http://127.0.0.1:5500/pages/vendor-profile.html'"
