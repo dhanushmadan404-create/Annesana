@@ -1,8 +1,7 @@
-
 /* =======================
    MAP INITIALIZATION
 ======================= */
-let map = L.map("map").setView([13.0827, 80.2707], 11);
+const map = L.map("map").setView([13.0827, 80.2707], 11);
 
 L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 20,
@@ -13,7 +12,7 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 /* =======================
    ICON
 ======================= */
-let foodIcon = L.icon({
+const foodIcon = L.icon({
     iconUrl: "/assets/3448609.png",
     iconSize: [40, 40],
     iconAnchor: [20, 40],
@@ -24,85 +23,60 @@ let foodIcon = L.icon({
 ======================= */
 let userLat = null;
 let userLng = null;
-let allLocations;   // ✅ FIXED: global storage
+let allLocations = [];
+let matchedLocation = null;
+let routingControl = null;
 
 /* =======================
-   CATEGORIES (FIXED)
+   FOOD CATEGORIES
 ======================= */
 const categories = [
-    { id: 8, foods: ["biriyani", "chickenrice", "fish", "keema"] },
+    { id: 8, foods: ["biriyani", "chickenrice", "fish", "keema","rice"] },
     { id: 7, foods: ["almond", "coffee", "jigarthanda", "rose"] },
     { id: 4, foods: ["curd", "meal", "adai", "bread", "chappati", "dosa"] },
     { id: 5, foods: ["bhaji", "bonda", "samosa", "sweet"] },
 ];
 
-
 /* =======================
    FETCH LOCATIONS
 ======================= */
-async function getLoc() {
+async function getLocations() {
     try {
-        const response = await fetch("http://127.0.0.1:8000/locations");
-        const data = await response.json();
-        console.log(data)
-        allLocations = data; // ✅ SAVE LOCATIONS
+        const res = await fetch("http://127.0.0.1:8000/locations");
+        allLocations = await res.json();
 
-        data.forEach((loc) => {
+        console.log("Locations loaded:", allLocations);
+
+        allLocations.forEach(loc => {
             if (loc.latitude && loc.longitude) {
                 L.marker([loc.latitude, loc.longitude], { icon: foodIcon })
                     .addTo(map)
                     .bindPopup(
-                        `<h3>${loc.location_name}</h3>Vendor ID: ${loc.vendor_id}`
+                        `<b>${loc.location_name}</b><br>Vendor ID: ${loc.vendor_id}`
                     );
-                }});
-function tryRouting() {
-const foodName = localStorage.getItem("selectedFood");
-console.log(foodName)
-    if (!foodName || !userLat || !userLng || allLocations.length === 0) {
-        return; // ⛔ wait until all data exists
-    }
+            }
+        });
 
-    let matchedLocation=null ;
-    let shop;
-    const food = foodName.toLowerCase();
-
-categories.forEach(cat => {
-    const normalizedFoods = cat.foods.map(f => f.toLowerCase());
-
-    if (normalizedFoods.includes(food)) {
-        shop = cat.id;
-        console.log("Matched shop:", shop);
-    }
-});
-
-    
-    if (!matchedLocation) {
-        alert("Food location not found");
-        return;
+        tryRouting(); // attempt after locations load
+    } catch (err) {
+        console.error("Location fetch error:", err);
     }
 }
-
-tryRouting(); // ✅ try routing after data load
-}
- catch (error) {
-        console.error("Error fetching locations:", error);
-    }
-}
-getLoc();
+getLocations();
 
 /* =======================
    USER LOCATION
 ======================= */
-document.getElementById("getCurrent").addEventListener("click", () => {
+document.getElementById("getCurrent")?.addEventListener("click", () => {
     if (!navigator.geolocation) {
         alert("Geolocation not supported");
         return;
     }
 
-    navigator.geolocation.getCurrentPosition(showPosition, (err) => {
-        alert("Enable location permission");
-        console.error(err);
-    });
+    navigator.geolocation.getCurrentPosition(
+        showPosition,
+        err => alert("Enable location access")
+    );
 });
 
 function showPosition(position) {
@@ -116,14 +90,50 @@ function showPosition(position) {
         .bindPopup("You are here")
         .openPopup();
 
-    // tryRouting(); // ✅ try routing after location fetch
+    tryRouting(); // attempt after location load
 }
 
 /* =======================
    ROUTING LOGIC
 ======================= */
+function tryRouting() {
+    const foodName = localStorage.getItem("selectedFood");
 
-L.Routing.control({
+    if (!foodName || !userLat || !userLng || allLocations.length === 0) {
+        return; // wait until all data exists
+    }
+
+    const food = foodName.toLowerCase();
+    let shopId = null;
+
+    // Find vendor ID by food
+    categories.forEach(cat => {
+        if (cat.foods.includes(food)) {
+            shopId = cat.id;
+        }
+    });
+
+    if (!shopId) {
+        alert("Food category not found");
+        return;
+    }
+
+    // Find location by vendor ID
+    matchedLocation = allLocations.find(
+        loc => loc.vendor_id == shopId
+    );
+
+    if (!matchedLocation) {
+        alert("Food location not found");
+        return;
+    }
+
+    // Remove existing route
+    if (routingControl) {
+        map.removeControl(routingControl);
+    }
+
+    routingControl = L.Routing.control({
         waypoints: [
             L.latLng(userLat, userLng),
             L.latLng(matchedLocation.latitude, matchedLocation.longitude),
@@ -134,50 +144,13 @@ L.Routing.control({
         },
     }).addTo(map);
 
-    localStorage.removeItem("selectedFood"); // ✅ cleanup
+    localStorage.removeItem("selectedFood");
+}
 
-
-// let man; // Declare globally
-
-// function initMap() {
-//     // Check if the 'map' variable is already set
-//     if (man !== undefined && man !== null) {
-//         man.remove(); // This safely destroys the old map if it exists
-//     }
-
-//     man = L.map('map').setView([13.08, 80.27], 12);
-    
-//     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-//         attribution: '© OpenStreetMap contributors'
-//     }).addTo(map);
-// }
-// // SINGLE window.onload to handle everything
-// window.onload = function() {
-//     // A. Initialize Map
-//     map = L.map('map').setView([13.08, 80.27], 12);
-//     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
-
-//     // B. Automatically get location as soon as page loads
-//     if (navigator.geolocation) {
-//         navigator.geolocation.getCurrentPosition((position) => {
-//             userLat = position.coords.latitude;
-//             userLng = position.coords.longitude;
-            
-//             // Show user on map
-//             L.marker([userLat, userLng]).addTo(map).bindPopup("You are here").openPopup();
-
-//             // C. Check if we need to route to a food item
-//             const food_name = localStorage.getItem("selectedFood");
-//             if (food_name) {
-//                 startRouting(food_name);
-//                 localStorage.removeItem("selectedFood"); // Clear it
-//             }
-//         }, (err) => alert("Please enable location: " + err.message));
-//     }
-// };
-
-// // This function stays here for your category_breakfast.html buttons
-// function category(food_name) {
-//     localStorage.setItem("selectedFood", food_name);
-//     window.location.href = "map.html"; 
-// }
+/* =======================
+   FOOD BUTTON HANDLER
+======================= */
+function category(food_name) {
+    localStorage.setItem("selectedFood", food_name.toLowerCase());
+    window.location.href = "map.html";
+}

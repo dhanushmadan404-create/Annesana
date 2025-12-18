@@ -45,65 +45,45 @@
       <div class="product-details">
         <h2>Samosa</h2>
 
-        <div class="rating-section">
-          <h3>Rating and Review</h3>
-          <div class="stars">
-            <span class="star">★</span>
-            <span class="star">★</span>
-            <span class="star">★</span>
-            <span class="star">★</span>
-            <span class="star">★</span>
-          </div>
-        </div>
+        <h2>Rose Milk</h2>
+<form id="commentForm">
+  <textarea
+    id="comment"
+    name="comment"
+    placeholder="Enter your comment"
+    required
+  ></textarea>
 
-        <input type="text" class="comments-input" placeholder="comments" />
+  <select id="stars" required>
+    <option value="">Select rating</option>
+    <option value="1">⭐</option>
+    <option value="2">⭐⭐</option>
+    <option value="3">⭐⭐⭐</option>
+    <option value="4">⭐⭐⭐⭐</option>
+    <option value="5">⭐⭐⭐⭐⭐</option>
+  </select>
+
+  <button type="submit" id="Send">Submit</button>
+</form>
+
+<div id="comments"></div>
+
         <button
           class="comments-input track"
-          onclick="window.location.href='/pages/map.html'"
+          onclick="category('samosa')"
         >
           Track
         </button>
       </div>
     </main>
-    <footer>
-      <!-- Comments Section -->
-      <div class="comments-section">
-        <div class="comment-item">
-          <div class="comment-left">
-            <img src="/assets/icons8-a-64.png" class="avatar" />
-            <span class="comment-text">It's very nice</span>
-          </div>
-          <div class="comment-stars">
-            <span class="comment-star">★</span>
-            <span class="comment-star">★</span>
-            <span class="comment-star">★</span>
-          </div>
-        </div>
 
-        <div class="comment-item">
-          <div class="comment-left">
-            <img src="/assets/icons8-a-64.png" class="avatar" />
-            <span class="comment-text">It's very nice</span>
-          </div>
-          <div class="comment-stars">
-            <span class="comment-star">★</span>
-            <span class="comment-star">★</span>
-            <span class="comment-star">★</span>
-          </div>
-        </div>
+    <!-- Comments Section -->
+         <footer>
 
-        <div class="comment-item">
-          <div class="comment-left">
-            <img src="/assets/icons8-a-64.png" class="avatar" />
-            <span class="comment-text">It's very nice</span>
-          </div>
-          <div class="comment-stars">
-            <span class="comment-star">★</span>
-            <span class="comment-star">★</span>
-            <span class="comment-star">★</span>
-          </div>
-        </div>
-      </div>
-    </footer>
+       <h1>Comments</h1>
+       <div id="comments-section"></div>
+      </footer>
+  <script src="/scripts/item.js"></script>
+   <script src="/scripts/category.js"></script>
   </body>
 </html>
