@@ -30,11 +30,12 @@ let allLocations;   // ✅ FIXED: global storage
    CATEGORIES (FIXED)
 ======================= */
 const categories = [
-    { id: 8, foods: ["Biriyani", "ChickenRice", "fish", "keema"] },
+    { id: 8, foods: ["biriyani", "chickenrice", "fish", "keema"] },
     { id: 7, foods: ["almond", "coffee", "jigarthanda", "rose"] },
     { id: 4, foods: ["curd", "meal", "adai", "bread", "chappati", "dosa"] },
     { id: 5, foods: ["bhaji", "bonda", "samosa", "sweet"] },
 ];
+
 
 /* =======================
    FETCH LOCATIONS
@@ -43,7 +44,7 @@ async function getLoc() {
     try {
         const response = await fetch("http://127.0.0.1:8000/locations");
         const data = await response.json();
-
+        console.log(data)
         allLocations = data; // ✅ SAVE LOCATIONS
 
         data.forEach((loc) => {
@@ -63,18 +64,17 @@ console.log(foodName)
 
     let matchedLocation=null ;
     let shop;
-    categories.forEach((cat) => {
-        if (cat.foods.includes(foodName.toLowerCase())) {
-            shop=cat.id
-            console.log(shop)
-        }
-    });
-    data.forEach((find) => { // Fixed arrow function syntax
-        if (find.id === shop) { // Use the ID you found from categories
-            matchedLocation = find;
-            console.log(matchedLocation)
-        }
-    });
+    const food = foodName.toLowerCase();
+
+categories.forEach(cat => {
+    const normalizedFoods = cat.foods.map(f => f.toLowerCase());
+
+    if (normalizedFoods.includes(food)) {
+        shop = cat.id;
+        console.log("Matched shop:", shop);
+    }
+});
+
     
     if (!matchedLocation) {
         alert("Food location not found");
