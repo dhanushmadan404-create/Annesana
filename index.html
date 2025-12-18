@@ -34,7 +34,7 @@
         />
 
         <div class="right-align right">
-          <a href="#" id="profile">profile</a>
+          <button id="profile">profile</button>
           <a href="#" id="login">Log in</a>
           <div class="search-bar">
             <input type="text" placeholder="Search..." />
@@ -93,26 +93,46 @@
           </a>
         </div>
       </div>
-<!-- profile -->
- <div  id="profileDetails"><div id="details"></div></div>
+      <!-- profile -->
+      <div id="profileDetails"><div id="details"></div></div>
       <!-- form  -->
 
       <div id="loginForm">
         <div class="google">
-          <form id="UserData" >
+        <form id="UserData">
+  <h1>Login Form</h1>
 
-            <h1>loginForm</h1>
-            <label for="UserEmail">Email</label><br/>
-            <input id="UserEmail" type="text" name="UserEmail" placeholder="Enter your Email" minlength="13" required/><br/>
-            <label for="UserPassword">Password</label><br/>
-            <input id="UserPassword" type="password" name="userPassword" placeholder="Enter your Password" required><br/>
-            <label for="role">Role</label>
-            <select name="role" id="role"><option value="user">user</option>
-            <option value="vendor">vendor</option></select><br/>
-            <button id="get" type="submit">Submit</button>
-          </div>
-        </form>
+  <label>Email</label><br />
+  <input
+    id="email"
+    type="email"
+    name="email"
+    placeholder="Enter your Email"
+    required
+  /><br />
+
+  <label>Password</label><br />
+  <input
+    id="password"
+    type="password"
+    name="password"
+    minlength="6"
+    placeholder="Enter your Password"
+    required
+  /><br />
+
+  <label>Role</label><br />
+  <select name="role" id="role" required>
+    <option value="">Select role</option>
+    <option value="user">User</option>
+    <option value="vendor">Vendor</option>
+  </select><br />
+
+  <button type="submit">Submit</button>
+</form>
+
         </div>
+      </div>
       <!-- endForm -->
       <h2 class="categories">Categories</h2>
 

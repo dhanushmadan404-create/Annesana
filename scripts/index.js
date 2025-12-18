@@ -46,34 +46,82 @@ moveBtn.addEventListener("click", () => {
 
 
 
-// userData validation 
-const form=document.getElementById("UserData")
-document.getElementById("get").addEventListener("submit",async (event)=>{
-    event.preventDefault()
-    const formData=FormData(event.target)
-    const formObject=Object.fromEntries(formData.entries())
-    alert(formObject)
-    fetch("/backend/app/router/user.py/users",{
-        method:"POST",
-        headers:{"content-type":"application/json"},
-        body:JSON.stringify(formObject)
-    })
-    .then((Response)=>(Response.json()))
-    .then((data)=>console.log("success:",data))
-    .catch((error)=>{
-        console.error("Error:",error)
+const form = document.getElementById("UserData");
+
+form.addEventListener("submit", async (event) => {
+  event.preventDefault();
+
+  const formData = new FormData(form);
+  const formObject = Object.fromEntries(formData.entries());
+
+  // Extra validation (optional)
+  if (!formObject.email || !formObject.password || !formObject.role) {
+    alert("All fields are required");
+    return;
+  }
+
+  try {
+    const response = await fetch("http://127.0.0.1:8000/users", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formObject),
     });
 
-})
-document.getElementById("profile").addEventListener("click",async ()=>{
-    document.getElementById("profileDetails").style.visibility="visible"
+    const data = await response.json();
 
-let profile=document.getElementById("details")
-const Response=await fetch("/backend/app/router/user.py/users/1")
-const data=(await Response).json()
-profile.innerHTML=`<h1>Profile</h1>
-<label for="dataEmail"><h3 id="dataEmail">${data.email}</h3><br/>
-<label for="Role"<h3 id="Role">${data.role}</h3>`
-})
+    if (!response.ok) {
+      console.error("Backend error:", data);
+      alert(data.detail || "Submission failed");
+      return;
+    }
+
+    console.log("Success:", data);
+    alert("User created successfully!");
+    form.reset();
+
+  } catch (error) {
+    console.error("Network Error:", error);
+    alert("Server not reachable");
+  }
+});
+
+
+// PROFILE
+document.getElementById("profile").addEventListener("click", async (event) => {
+     event.preventDefault();  // <-- Prevent page jump
+    try {
+        document.getElementById("profileDetails").style.visibility = "visible";
+
+        const profile = document.getElementById("details");
+
+        const response = await fetch("http://127.0.0.1:8000/users", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
+
+        
+        
+        const data = await response.json();  // <-- data is now defined here
+        console.log(data)
+        profile.innerHTML = `
+            <h1>Profile</h1>
+            <label>Email:</label>
+            <h3>${data[(data.length)-1].email}</h3>
+            <br/>
+            <label>Role:</label>
+            <h3>${data[0].role}</h3>
+        `;
+    } catch (error) {
+        console.error("Error:", error);
+    }
+});
+
 
     
+            // if (!response.ok) {
+            //     throw new Error("Failed to fetch profile");
+            // }

@@ -16,24 +16,20 @@ router = APIRouter(prefix="/locations", tags=["Locations"])
 def create_location(location: fastapi_schemas.LocationCreate, db: Session = Depends(get_db)):
     """Create a new location"""
     db_location = fastapi_models.Location(
-        location_id_serial=0,
-        location_name_character_varying_255=location.location_name_character_varying_255,
-        latitude_numeric_10_6=location.latitude_numeric_10_6,
-        longitude_numeric_10_6=location.longitude_numeric_10_6,
+        location_name=location.location_name,
+        latitude=location.latitude,
+        longitude=location.longitude,
         vendor_id=location.vendor_id,
-        qr_time_input_url_character_varying_255=location.qr_time_input_url_character_varying_255,
-        qr_code_time_time_without_time_zone=datetime.now(),
-        qr_code_time_time_without_me_zone=datetime.now()
     )
     db.add(db_location)
     db.commit()
     db.refresh(db_location)
     return db_location
 
-@router.get("/", response_model=List[fastapi_schemas.LocationResponse])
-def get_locations(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
+@router.get("", response_model=List[fastapi_schemas.LocationResponse])
+def get_locations( db: Session = Depends(get_db)):
     """Get all locations with pagination"""
-    locations = db.query(fastapi_models.Location).offset(skip).limit(limit).all()
+    locations = db.query(fastapi_models.Location).all()
     return locations
 
 @router.get("/{location_id}", response_model=fastapi_schemas.LocationResponse)

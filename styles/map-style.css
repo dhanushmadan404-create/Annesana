@@ -129,6 +129,10 @@ header {
   height:663px;
   
 }
+#getCurrent{
+  width: 90px;
+  height: 40px;
+}
 footer {
   background: #ffb347;
   padding: 20px;

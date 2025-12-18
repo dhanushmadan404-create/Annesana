@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field,ConfigDict
 from datetime import datetime
 from typing import Optional
 from enum import Enum
@@ -24,8 +24,7 @@ class UserResponse(UserBase):
     created_at: datetime  # response includes created_at
     # DO NOT include password here
 
-    class Config:
-        orm_mode = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 # ==================== FAVORITE SCHEMAS ====================
@@ -41,27 +40,25 @@ class FavoriteResponse(FavoriteBase):
     favorite_id_serial: int
     created_at_timestamp_with_out_time_zone: Optional[datetime] = None
     
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 # ==================== REVIEW SCHEMAS ====================
 class ReviewBase(BaseModel):
-    user_id_integer: int
-    food_id_integer: int
-    rating_integer: int
-    review_text_text: str
+    user_id: int
+    food_id: int
+    vendor_id: int  
+    rating: int
+    review_text: str
 
 class ReviewCreate(ReviewBase):
     pass
 
 class ReviewResponse(ReviewBase):
     review_id: int
-    review_id_serial: int
-    created_at_timestamp_with_out_time_zone: Optional[datetime] = None
+    created_at: Optional[datetime] = None
     
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 # ==================== FOOD SCHEMAS ====================
@@ -79,8 +76,7 @@ class FoodResponse(FoodBase):
     food_id: int
     food_id_serial: int
     
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 # ==================== VENDOR SCHEMAS ====================
@@ -97,26 +93,23 @@ class VendorResponse(VendorBase):
     qr_code_time_without_time_zone: Optional[datetime] = None
     qr_code_time_time_without_me_zone: Optional[datetime] = None
     
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 # ==================== LOCATION SCHEMAS ====================
+
 class LocationBase(BaseModel):
-    location_name_character_varying_255: str
-    latitude_numeric_10_6: str
-    longitude_numeric_10_6: str
-    vendor_id: int
-    qr_time_input_url_character_varying_255: str
+    location_name: str
+    latitude: float
+    longitude: float
+    # Change this to Optional so it can handle None/NULL values
+    vendor_id: Optional[int] = None
 
 class LocationCreate(LocationBase):
     pass
 
 class LocationResponse(LocationBase):
     location_id: int
-    location_id_serial: int
-    qr_code_time_time_without_time_zone: Optional[datetime] = None
-    qr_code_time_time_without_me_zone: Optional[datetime] = None
+   
     
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)

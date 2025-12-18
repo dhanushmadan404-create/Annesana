@@ -9,18 +9,31 @@
   </head>
   <body>
     <!-- Header -->
-    <header>
-      <h1>Annesana</h1>
-      <img class="logo" src="/assets/logo.png" alt="not able to see" />
+ <header>
+      <div class="header_container">
+        <img
+          class="logo"
+          src="/assets/annesana.png"
+          alt="not able to see"
+          onclick="window.location.href='/index.html'"
+        />
+
+        <img
+          class="logo location"
+          src="/assets/image.png"
+          alt="not available"
+          onclick="window.location.href='/pages/map.html'"
+        />
+
+        <div class="right-align right">
+   
+          <div class="search-bar">
+            <input type="text" placeholder="Search..." />
+            <button>🔍</button>
+          </div>
+        </div>
+      </div>
     </header>
-
-    <!-- Navigation -->
-    <nav>
-      <a href="/index.html">HOME</a>
-      <a href="/pages/map.html">TRACK</a>
-      <a href="/pages/profile.html">PROFILE</a>
-    </nav>
-
     <!-- Main Content -->
     <main>
       <img
@@ -31,18 +44,28 @@
       <div class="product-details">
         <h2>Almond Milk</h2>
 
-        <div class="rating-section">
-          <h3>Rating and Review</h3>
-          <div class="stars">
-            <span class="star">★</span>
-            <span class="star">★</span>
-            <span class="star">★</span>
-            <span class="star">★</span>
-            <span class="star">★</span>
-          </div>
-        </div>
+   <form id="commentForm">
+  <textarea
+    id="comment"
+    name="comment"
+    placeholder="Enter your comment"
+    required
+  ></textarea>
 
-        <input type="text" class="comments-input" placeholder="comments" />
+  <select id="stars" required>
+    <option value="">Select rating</option>
+    <option value="1">⭐</option>
+    <option value="2">⭐⭐</option>
+    <option value="3">⭐⭐⭐</option>
+    <option value="4">⭐⭐⭐⭐</option>
+    <option value="5">⭐⭐⭐⭐⭐</option>
+  </select>
+
+  <button type="submit" id="Send">Submit</button>
+</form>
+
+<div id="comments"></div>
+
         <button
           class="comments-input track"
           onclick="window.location.href='/pages/map.html'"
@@ -53,42 +76,8 @@
     </main>
 
     <!-- Comments Section -->
-    <div class="comments-section">
-      <div class="comment-item">
-        <div class="comment-left">
-          <img src="/assets/icons8-a-64.png" class="avatar" />
-          <span class="comment-text">It's very nice</span>
-        </div>
-        <div class="comment-stars">
-          <span class="comment-star">★</span>
-          <span class="comment-star">★</span>
-          <span class="comment-star">★</span>
-        </div>
-      </div>
-
-      <div class="comment-item">
-        <div class="comment-left">
-          <img src="/assets/icons8-a-64.png" class="avatar" />
-          <span class="comment-text">It's very nice</span>
-        </div>
-        <div class="comment-stars">
-          <span class="comment-star">★</span>
-          <span class="comment-star">★</span>
-          <span class="comment-star">★</span>
-        </div>
-      </div>
-
-      <div class="comment-item">
-        <div class="comment-left">
-          <img src="/assets/icons8-a-64.png" class="avatar" />
-          <span class="comment-text">It's very nice</span>
-        </div>
-        <div class="comment-stars">
-          <span class="comment-star">★</span>
-          <span class="comment-star">★</span>
-          <span class="comment-star">★</span>
-        </div>
-      </div>
-    </div>
+        <h1>Comments</h1>
+  <div id="comments-section"></div>
+  <script src="/scripts/item.js"></script>
   </body>
 </html>
