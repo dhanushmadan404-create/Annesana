@@ -31,7 +31,7 @@ let routingControl = null;
    FOOD CATEGORIES
 ======================= */
 const categories = [
-    { id: 8, foods: ["biriyani", "chickenrice", "fish", "keema","rice"] },
+    { id: 8, foods: ["biriyani", "chickenrice", "fish", "keema", "rice"] },
     { id: 7, foods: ["almond", "coffee", "jigarthanda", "rose"] },
     { id: 4, foods: ["curd", "meal", "adai", "bread", "chappati", "dosa"] },
     { id: 5, foods: ["bhaji", "bonda", "samosa", "sweet"] },
@@ -41,8 +41,9 @@ const categories = [
    FETCH LOCATIONS
 ======================= */
 async function getLocations() {
+    const API_URL = window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost" ? "http://127.0.0.1:8000" : "";
     try {
-        const res = await fetch("http://127.0.0.1:8000/locations");
+        const res = await fetch(`${API_URL}/foods/locations`);
         allLocations = await res.json();
 
         console.log("Locations loaded:", allLocations);
@@ -97,54 +98,44 @@ function showPosition(position) {
    ROUTING LOGIC
 ======================= */
 function tryRouting() {
-    const foodName = localStorage.getItem("selectedFood");
+    // NEW ROUTING LOGIC
+    const targetJSON = localStorage.getItem("targetCoords");
 
-    if (!foodName || !userLat || !userLng || allLocations.length === 0) {
-        return; // wait until all data exists
-    }
+    if (targetJSON && userLat && userLng) {
+        const target = JSON.parse(targetJSON);
 
-    const food = foodName.toLowerCase();
-    let shopId = null;
-
-    // Find vendor ID by food
-    categories.forEach(cat => {
-        if (cat.foods.includes(food)) {
-            shopId = cat.id;
+        // Remove existing route
+        if (routingControl) {
+            map.removeControl(routingControl);
         }
-    });
 
-    if (!shopId) {
-        alert("Food category not found");
+        routingControl = L.Routing.control({
+            waypoints: [
+                L.latLng(userLat, userLng),
+                L.latLng(target.lat, target.lng),
+            ],
+            routeWhileDragging: false,
+            lineOptions: {
+                styles: [{ color: "blue", weight: 5 }],
+            },
+            createMarker: function () { return null; } // Optional: suppress default markers
+        }).addTo(map);
+
+        // Optional: clear it after arrival or keep it
+        // localStorage.removeItem("targetCoords");
         return;
     }
 
-    // Find location by vendor ID
-    matchedLocation = allLocations.find(
-        loc => loc.vendor_id == shopId
-    );
+    // FALLBACK (Old Logic) - Optional to keep or remove.
+    // I'll keep it simple: if no precise target, do nothing or just show all locations (which getLocations does).
+}
 
-    if (!matchedLocation) {
-        alert("Food location not found");
-        return;
-    }
-
-    // Remove existing route
-    if (routingControl) {
-        map.removeControl(routingControl);
-    }
-
-    routingControl = L.Routing.control({
-        waypoints: [
-            L.latLng(userLat, userLng),
-            L.latLng(matchedLocation.latitude, matchedLocation.longitude),
-        ],
-        routeWhileDragging: false,
-        lineOptions: {
-            styles: [{ color: "blue", weight: 5 }],
-        },
-    }).addTo(map);
-
-    localStorage.removeItem("selectedFood");
+/* =======================
+   FOOD BUTTON HANDLER (Global)
+======================= */
+function findLocation(lat, lng) {
+    localStorage.setItem("targetCoords", JSON.stringify({ lat, lng }));
+    window.location.href = "/pages/map.html";
 }
 
 /* =======================
@@ -154,3 +145,5 @@ function category(food_name) {
     localStorage.setItem("selectedFood", food_name.toLowerCase());
     window.location.href = "map.html";
 }
+
+// Vendor Find location

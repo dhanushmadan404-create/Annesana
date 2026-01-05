@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, ForeignKey, DateTime, Enum, TIMESTAMP,Text,Numeric
+from sqlalchemy import Column, Integer, String, ForeignKey, DateTime, Enum, TIMESTAMP,Text,Numeric,Float,Time
 from sqlalchemy.orm import relationship
 from database import Base
 import enum
@@ -6,6 +6,7 @@ import enum
 class UserRole(str, enum.Enum):
     user = "user"
     vendor = "vendor"
+    admin="admin"
 
 class User(Base):
     __tablename__ = "users"
@@ -14,77 +15,40 @@ class User(Base):
     email = Column(String, unique=True, nullable=False)
     created_at = Column(TIMESTAMP, nullable=False)
     password_hash = Column(String, nullable=False)
+    name=Column(String,nullable=False)
     role = Column(Enum(UserRole), nullable=False)
+    image=Column(Text,nullable=True)
 
-    favorites = relationship("Favorite", back_populates="user")
-    reviews = relationship("Review", back_populates="user")
 
-class Favorite(Base):
-    __tablename__ = "favorites"
-    
-    id = Column(Integer, primary_key=True, index=True)
-    user_id = Column(Integer, ForeignKey("users.user_id"), nullable=False)
-    food_id = Column(Integer, ForeignKey("foods.food_id"), nullable=False)
-    created_at = Column(DateTime, nullable=False)
-
-    user = relationship("User", back_populates="favorites")
-    food = relationship("Food", back_populates="favorites")
-    
-
-# from sqlalchemy import Column, Integer, ForeignKey, DateTime, Text
-# from sqlalchemy.orm import relationship
-# from datetime import datetime
-# from database import Base
-
-class Review(Base):
-    __tablename__ = "reviews"
-
-    review_id = Column(Integer, primary_key=True, index=True)
-
-    user_id = Column(Integer, ForeignKey("users.user_id"), nullable=False)
-    food_id = Column(Integer, ForeignKey("foods.food_id"), nullable=False)
-    vendor_id = Column(Integer, ForeignKey("vendors.vendor_id"), nullable=False)
-
-    rating = Column(Integer, nullable=False)
-    review_text = Column(Text, nullable=False)
-
-    created_at = Column(TIMESTAMP)
-
-    user = relationship("User", back_populates="reviews")
-    food = relationship("Food", back_populates="reviews")
-    vendor = relationship("Vendor", back_populates="reviews")
-
+    vendor = relationship("Vendor", back_populates="user", uselist=False)
 
 class Food(Base):
     __tablename__ = "foods"
     
     food_id = Column(Integer, primary_key=True, index=True, autoincrement=True)
     vendor_id = Column(Integer, ForeignKey("vendors.vendor_id"), nullable=False)
-    name = Column(String(255), nullable=False)
-    image_url = Column(String(255))
-    food_type = Column(String(100))
-    phone_number = Column(String(15))
-
-    favorites = relationship("Favorite", back_populates="food")
-    reviews = relationship("Review", back_populates="food")
+    food_name = Column(String(255), nullable=False)
+    food_image_url = Column(String(255))
+    category = Column(String(100))
+    latitude=Column(Float,nullable=False)
+    longitude=Column(Float,nullable=False)
+   
     vendor = relationship("Vendor", back_populates="foods")
 
 class Vendor(Base):
     __tablename__ = "vendors"
     
     vendor_id = Column(Integer, primary_key=True, index=True, autoincrement=True)
-    name = Column(String(255), nullable=False)
+    phone_number=Column(String,nullable=False)
+    cart_image_url=Column(String,nullable=False)
+    opening_time=Column(Time,nullable=False)
+    closing_time=Column(Time,nullable=False)
+    user_id = Column(
+    Integer,
+    ForeignKey("users.user_id"),
+    nullable=False,
+    unique=True   # one user → one vendor
+)
 
     foods = relationship("Food", back_populates="vendor")
-    locations = relationship("Location", back_populates="vendor")
-    reviews = relationship("Review", back_populates="vendor")
-class Location(Base):
-    __tablename__ = "locations"
-    
-    location_id = Column(Integer, primary_key=True, index=True, autoincrement=True)
-    location_name = Column(String(255), nullable=False)
-    latitude = Column(Numeric(precision=9, scale=6))
-    longitude = Column(Numeric(precision=9, scale=6))
-    vendor_id = Column(Integer, ForeignKey("vendors.vendor_id"), nullable=False)
-
-    vendor = relationship("Vendor", back_populates="locations")
+    user = relationship("User", back_populates="vendor", uselist=False)

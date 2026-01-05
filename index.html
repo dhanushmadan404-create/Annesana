@@ -35,7 +35,7 @@
 
         <div class="right-align right">
           <button id="profile">profile</button>
-          <a href="#" id="login">Log in</a>
+          <a href="/pages/login.html" id="login">Log in</a>
           <div class="search-bar">
             <input type="text" placeholder="Search..." />
             <button>🔍</button>
@@ -97,51 +97,43 @@
       <div id="profileDetails"><div id="details"></div></div>
       <!-- form  -->
 
-      <div id="loginForm">
-        <div class="google">
-          <form id="UserData">
-            <h1>Login Form</h1>
+     
+<section class="categories">
+  <h2 class="category-title">Categories</h2>
 
-            <label>Email</label><br />
-            <input
-              id="email"
-              type="email"
-              name="email"
-              placeholder="Enter your Email"
-              required
-            /><br />
+  <div class="category-grid vertical">
+    <a href="/category/breakfast.html" class="category-card">
+      <img src="/assets/food_image/Categories/break_fast.jpg" alt="Breakfast">
+      <span>Breakfast</span>
+    </a>
 
-            <label>Password</label><br />
-            <input
-              id="password"
-              type="password"
-              name="password"
-              minlength="6"
-              placeholder="Enter your Password"
-              required
-            /><br />
+    <a href="/category/lunch.html" class="category-card">
+      <img src="/images/lunch.png" alt="Lunch">
+      <span>Lunch</span>
+    </a>
 
-            <label>Role</label><br />
-            <select name="role" id="role" required>
-              <option value="">Select role</option>
-              <option value="user">User</option>
-              <option value="vendor">Vendor</option></select
-            ><br />
+    <a href="/category/dinner.html" class="category-card">
+      <img src="/images/dinner.png" alt="Dinner">
+      <span>Dinner</span>
+    </a>
 
-            <button type="submit">Submit</button>
-          </form>
-        </div>
-      </div>
-      <!-- endForm -->
-      <h2 class="categories">Categories</h2>
+    <a href="/category/snacks.html" class="category-card">
+      <img src="/images/snacks.png" alt="Snacks">
+      <span>Snacks</span>
+    </a>
 
-      <!-- categories -->
-      <div class="collection_category">
-        <!-- <div class="option"></div> -->
-        <img src="" alt="" id="book" onclick="" />
+    <a href="/category/drinks.html" class="category-card">
+      <img src="/images/drinks.png" alt="Drinks">
+      <span>Drinks</span>
+    </a>
 
-        <button id="move"></button>
-      </div>
+    <a href="/category/dessert.html" class="category-card">
+      <img src="/images/dessert.png" alt="Dessert">
+      <span>Dessert</span>
+    </a>
+  </div>
+</section>
+
     </main>
     <footer>
       <small>© 2025 Annesana. All Rights Reserved.</small>

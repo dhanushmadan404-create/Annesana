@@ -1,0 +1,15 @@
+{
+    "version": 2,
+    "rewrites": [
+        {
+            "source": "/((?!assets|styles|scripts|pages|index.html|favicon.ico).*)",
+            "destination": "/backend/app/main.py"
+        }
+    ],
+    "builds": [
+        {
+            "src": "backend/app/main.py",
+            "use": "@vercel/python"
+        }
+    ]
+}

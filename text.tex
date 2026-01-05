@@ -97,3 +97,49 @@ header {
   transition: 0.3s ease;
 }
 
+
+
+
+class Food(Base):
+    __tablename__ = "foods"
+    
+    food_id = Column(Integer, primary_key=True, index=True, autoincrement=True)
+    vendor_id = Column(Integer, ForeignKey("vendors.vendor_id"), nullable=False)
+    food_name = Column(String(255), nullable=False)
+    food_image_url = Column(String(255))
+    category = Column(String(100))
+    latitude=Column(Float,nullable=False)
+    longitude=Column(Float,nullable=False)
+bro listen carefully first registration shoold be like this picture in this pic vendor enter vada ,sambar etc this all thing might added in a list it's separated by like this model food class so everything might have be separated so when vendor update the food list or location everything in model food class we should focus on food list now vendor remove like sambar then add idly then i separated everything  transfered to backend first  
+
+
+% tHIS TRANSFER DATA 
+const formData = new FormData(form);
+  const formObject = Object.fromEntries(formData.entries());
+
+  
+  try {
+    const response = await fetch("http://127.0.0.1:8000/users", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formObject),
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      console.error("Backend error:", data);
+      alert(data.detail || "Submission failed");
+      return;
+    }
+
+    console.log("Success:", data);
+    alert("User created successfully!");
+    form.reset();
+
+  } catch (error) {
+    console.error("Network Error:", error);
+    alert("Server not reachable");
+  }

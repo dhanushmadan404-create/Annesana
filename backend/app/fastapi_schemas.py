@@ -1,5 +1,5 @@
-from pydantic import BaseModel, Field,ConfigDict
-from datetime import datetime
+from pydantic import BaseModel,ConfigDict
+from datetime import datetime,time
 from typing import Optional
 from enum import Enum
 
@@ -7,11 +7,14 @@ from enum import Enum
 class UserRole(str, Enum):
     user = "user"
     vendor = "vendor"
+    admin="admin"
 
 # ==================== USER SCHEMAS ====================
 
 class UserBase(BaseModel):
     email: str
+    name:str
+    image:str
     role: UserRole
 
 class UserCreate(UserBase):
@@ -27,27 +30,11 @@ class UserResponse(UserBase):
     model_config = ConfigDict(from_attributes=True)
 
 
-# ==================== FAVORITE SCHEMAS ====================
-class FavoriteBase(BaseModel):
-    user_id_integer: int
-    food_id_integer: int
-
-class FavoriteCreate(FavoriteBase):
-    pass
-
-class FavoriteResponse(FavoriteBase):
-    id: int
-    favorite_id_serial: int
-    created_at_timestamp_with_out_time_zone: Optional[datetime] = None
-    
-    model_config = ConfigDict(from_attributes=True)
-
-
 # ==================== REVIEW SCHEMAS ====================
 class ReviewBase(BaseModel):
     user_id: int
     food_id: int
-    vendor_id: int  
+   
     rating: int
     review_text: str
 
@@ -63,53 +50,36 @@ class ReviewResponse(ReviewBase):
 
 # ==================== FOOD SCHEMAS ====================
 class FoodBase(BaseModel):
-    food_name_character_varying_255: str
-    food_image_url_character_varying_255: str
-    food_type_character_varying_100: str
-    phone_number_character_varying_15: str
-    vendor_id_integer: int
+    food_name: str
+    food_image_url: str
+    category: str
+    latitude:float
+    longitude:float
+    vendor_id: int
 
 class FoodCreate(FoodBase):
     pass
 
 class FoodResponse(FoodBase):
     food_id: int
-    food_id_serial: int
+
     
     model_config = ConfigDict(from_attributes=True)
 
 
 # ==================== VENDOR SCHEMAS ====================
 class VendorBase(BaseModel):
-    vendor_name_character_varying_255: str
-    qr_name_character_varying_255: str
+    phone_number: int
+    cart_image_url:str
+    opening_time:time
+    closing_time:time
+    user_id:int
 
 class VendorCreate(VendorBase):
     pass
 
 class VendorResponse(VendorBase):
-    vendor_id: int
-    vendor_id_serial: int
-    qr_code_time_without_time_zone: Optional[datetime] = None
-    qr_code_time_time_without_me_zone: Optional[datetime] = None
-    
+    vendor_id: int 
     model_config = ConfigDict(from_attributes=True)
 
 
-# ==================== LOCATION SCHEMAS ====================
-
-class LocationBase(BaseModel):
-    location_name: str
-    latitude: float
-    longitude: float
-    # Change this to Optional so it can handle None/NULL values
-    vendor_id: Optional[int] = None
-
-class LocationCreate(LocationBase):
-    pass
-
-class LocationResponse(LocationBase):
-    location_id: int
-   
-    
-    model_config = ConfigDict(from_attributes=True)

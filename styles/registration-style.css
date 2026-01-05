@@ -18,6 +18,7 @@ body {
   background-image: url(/assets/NicePng_food-cart-png_7682382.png);
   background-repeat: no-repeat;
   background-size: contain;
+  overflow-x: hidden;
 }
 
 /* Registration Container */
@@ -105,7 +106,7 @@ h1 {
 }
 
 .location-icon {
-  width: 40px;
+  width: 400px;
   height: 40px;
   background: #fffaf2; /* off-white warm */
   border-radius: 5px;
@@ -115,12 +116,43 @@ h1 {
   font-size: 20px;
   color: #3b1f00;
   flex-shrink: 0;
+  border: 2px solid red;
+}
+.location-icon:hover{
+  background-color:gold;
 }
 
-.location-group input {
-  flex: 1;
+/* map */
+#mapContainer{
+  width: 31.5rem;
+  /* background-color: black; */
+  height: 500px;
+  position: absolute;
+  left: 0px; 
+  background-color: #ffb347;
+display: none;
+}
+#mapContainer>h1>b{
+  font-size:medium ;
+  border: 3px solid red;
+
+}
+#mapContainer>h1>b:hover{
+  background-color: red;
+  color: gold;
+  text-shadow: 10px 10px 10px black ;
+  cursor: pointer;
 }
 
+#map{
+  width: 31.5rem;
+  /* background-color: black; */
+  height: 500px;
+  position: absolute;
+  left: 0px;
+}
+
+/*  */
 .image-upload {
   width: 100%;
   padding: 12px 15px;
@@ -133,19 +165,43 @@ h1 {
   text-align: left;
   color: #3b1f00;
 }
+/* menu list */
+.menu-list{
+  height: 60px;
+  background-color: black;
+  color: white;
+  overflow-y: scroll;
+}
+.store{
+  position: absolute;
+}
 
-.menu-list {
-  width: 100%;
-  min-height: 150px;
-  padding: 15px;
-  background: #fff3d0;
-  border: none;
-  border-radius: 5px;
-  font-size: 14px;
-  font-weight: 600;
-  resize: vertical;
+.menu {
+  display: flex;
+  align-items: center;
+}
+.menu input {
+  padding: 8px 10px;
+  width: 270px;
+  border: 2px solid #e85d04;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+  background: #fff;
   color: #3b1f00;
 }
+.menu b {
+  height: 36px;
+  background: #e85d04;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+
 
 .operating-hours {
   margin-bottom: 20px;
@@ -203,16 +259,7 @@ h1 {
 .submit-btn:hover {
   background: #ffb347; /* spicy orange */
 }
-footer {
-  background: #ffb347;
-  padding: 20px;
-  text-align: center;
-  border-top: 2px solid #e85d04;
-  color: #3b1f00;
-  font-weight: bold;
-  position: relative;
-  top: 40px;
-}
+
 /* Responsive */
 @media (max-width: 600px) {
   .registration-container {

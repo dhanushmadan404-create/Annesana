@@ -2,13 +2,20 @@ from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 
+from fastapi.staticfiles import StaticFiles
+import os
 
 # Import all routers
-from router import user, food, vendor, location, favorite, review
-
+from router import user, food, vendor
 
 # Create FastAPI application instance
 app = FastAPI()
+
+# make sure uploads folder exists
+os.makedirs("uploads", exist_ok=True)
+
+# mount the uploads folder
+app.mount("/uploads", StaticFiles(directory="uploads"), name="uploads")
 
 origins = [
     "http://127.0.0.1:5501",  # your frontend origin
@@ -16,19 +23,19 @@ origins = [
 ]
 
 app.mount("/static", StaticFiles(directory="/"), name="static")
+# for modify the request before request
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://127.0.0.1:5501"],
+    allow_origins=["*"],  # Allow all origins for Vercel/Testing
     allow_credentials=True,
-    allow_methods=["*"],     # ← allows OPTIONS automatically
+    allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 
 # Include all routers with API prefix
 app.include_router(user.router)
 app.include_router(food.router)
 app.include_router(vendor.router)
-app.include_router(location.router )
-app.include_router(favorite.router)
-app.include_router(review.router )

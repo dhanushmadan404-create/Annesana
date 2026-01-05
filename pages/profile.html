@@ -1,68 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Profile Page</title>
-    <link rel="stylesheet" href="/styles/profile-style.css" />
-    <link rel="icon" href="/assets/icons8-a-64.png" />
-  </head>
-  <body>
-    <header>
-      <div class="logo-align">
-        <img
-          class="logo"
-          src="/assets/annesana.png"
-          alt="not able to see"
-          onclick="window.location.href='/index.html'"
-        />
-      </div>
-      <nav>
-        <a href="/index.html">Home</a>
-        <a href="/pages/map.html">Track</a>
-        <a href="/pages/profile.html">Profile</a>
-      </nav>
 
-      <div class="search-bar">
-        <input type="text" placeholder="Search..." />
-        <button>🔍</button>
-      </div>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile Page</title>
+  <link rel="stylesheet" href="/styles/profile-style.css" />
+  <link rel="icon" href="/assets/icons8-a-64.png" />
+</head>
 
-    <!-- Navigation -->
+<body>
+  <header>
+    <div class="logo-align">
+      <img class="logo" src="/assets/annesana.png" alt="not able to see" onclick="window.location.href='/index.html'" />
+    </div>
+    <nav>
+      <a href="/index.html">Home</a>
+      <a href="/pages/map.html">Track</a>
+      <a href="/pages/profile.html">Profile</a>
+    </nav>
 
-    <!-- Main Content -->
-    <main>
-      <div class="photo-details">
-        <img src="/assets/DSC00735.jpg" class="profile-image" />
-        <br />
-        <h2>Dhanush_kumar</h2>
-        <p class="about">I most like food is parotta</p>
-      </div>
-      <div>
-        <a href="./map.html">
-          <img
-            src="/assets/NicePng_food-cart-png_7682382.png"
-            alt="not able to see"
-            class="banner"
-        /></a>
-      </div>
-      <div class="option">
-        <ul type="none">
-          <a href="./profile.html"><li class="option_list">Edit Profile</li></a>
-          <a href="http://127.0.0.1:5500/pages/collection.html"
-            ><li class="option_list">Favorite</li></a
-          >
-          <a href="./registration.html"><li class="option_list">log out</li></a>
-          <a href="./profile.html"><li class="option_list">Feedback</li></a>
-        </ul>
-      </div>
+    <div class="search-bar">
+      <input type="text" placeholder="Search..." />
+      <button>🔍</button>
+    </div>
+  </header>
 
-      <!-- Feedback Section -->
-    </main>
-    <!-- <div class="ad-section"></div> -->
-    <footer>
-      <small>© 2025 Annesana. All Rights Reserved.</small>
-    </footer>
-  </body>
+  <!-- Navigation -->
+
+  <!-- Main Content -->
+  <main>
+    <div id="profile_details" class="photo-details">
+
+    </div>
+    <div>
+      <a href="./map.html">
+        <img src="/assets/NicePng_food-cart-png_7682382.png" alt="not able to see" class="banner" /></a>
+    </div>
+    <div class="option">
+      <ul type="none">
+        <a id="editBtn">
+          <li class="option_list">Edit Profile</li>
+        </a>
+
+        <a href="./registration.html">
+          <li class="option_list">log out</li>
+        </a>
+        <li id="edit">
+        </li>
+      </ul>
+    </div>
+
+
+  </main>
+  <!-- <div class="ad-section"></div> -->
+  <footer>
+    <small>© 2025 Annesana. All Rights Reserved.</small>
+  </footer>
+  <script src="/scripts/profile.js"></script>
+</body>
+
 </html>

@@ -1,109 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vendor Profile</title>
-    <link rel="stylesheet" href="/styles/vendor-profile-style.css" />
-    <link rel="icon" href="/assets/icons8-a-64.png" />
-  </head>
-  <body>
-    <main>
-      <div class="container">
-        <!-- Profile Section -->
-        <div class="profile-section">
-          <div>
-            <img
-              src="/assets/NicePng_food-cart-png_7682382.png"
-              class="profile-image"
-              alt="can't able to see this"
-            />
-          </div>
-          <div class="profile-info">
-            <h2>sundaram</h2>
-            <p>so many taste food selling in my cart</p>
-          </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vendor Profile</title>
+  <link rel="stylesheet" href="/styles/vendor-profile-style.css" />
+  <link rel="icon" href="/assets/icons8-a-64.png" />
+</head>
+
+<body>
+  <main>
+    <!-- Profile Section -->
+    <div id="vendorProfile">
+      <div class="profile-section">
+        <div id="DB">
+
         </div>
+        <div id="vendor_details" class="profile-info">
 
-        <!-- Operating Hours -->
-        <div class="operating-hours">
-          <h3>Opening Time And Closing Time</h3>
-          <div class="status">
-            <button class="open-btn">Opened</button>
-            <button class="close-btn">Closed</button>
-          </div>
-          <button
-            class="edit-btn"
-            onclick="window.location.href='http://127.0.0.1:5500/pages/registration.html?'"
-          >
-            Edit
-          </button>
-        </div>
-
-        <!-- Feedback Section -->
-
-        <!-- Logout Button -->
-        <a href="./registration.html">
-          <button class="logout-btn">LOG OUT</button></a
-        >
-
-        <!-- Review Cards -->
-        <div class="review-cards">
-          <div class="review-card">
-            <img
-              src="/assets/food_image/items/break_fast/parotta.jpg"
-              class="card-image"
-            />
-            <div class="card-info">
-              <p><strong>parota</strong></p>
-              <p><strong>Rating and Review:</strong></p>
-              <button class="com-btn">Command</button>
-            </div>
-          </div>
-
-          <div class="review-card">
-            <img
-              src="/assets/food_image/items/dinner/chicken_rice.jpg"
-              class="card-image"
-            />
-            <div class="card-info">
-              <p><strong>Chicken Rice</strong></p>
-              <p><strong>Rating and Review:</strong></p>
-              <button class="com-btn">Command</button>
-            </div>
-          </div>
-
-          <!-- Comments Section -->
-
-          <!-- Bottom Review Cards -->
-          <div class="review-card">
-            <img
-              src="/assets/food_image/items/break_fast/dosa.jpg"
-              class="card-image"
-            />
-            <div class="card-info">
-              <p><strong>Dosa</strong></p>
-              <p><strong>Rating and Review:</strong></p>
-              <button class="com-btn">Command</button>
-            </div>
-          </div>
-
-          <div class="review-card">
-            <img
-              src="/assets/food_image/items/break_fast/idly.jpg"
-              class="card-image"
-            />
-            <div class="card-info">
-              <p><strong>Idly</strong></p>
-              <p><strong>Rating and Review:</strong></p>
-              <button class="com-btn">Command</button>
-            </div>
-          </div>
         </div>
       </div>
-    </main>
-    <footer>
-      <small>© 2025 Annesana. All Rights Reserved.</small>
-    </footer>
-  </body>
+
+      <!-- Operating Hours -->
+      <div class="operating-hours">
+        <h3 id="timeStatus"></h3>
+        <!-- <div class="status">
+            <button class="open-btn">Opened</button>
+            <button class="close-btn">Closed</button>
+          </div> -->
+        <button class="edit-btn" onclick="window.location.href='http://127.0.0.1:5500/pages/registration.html'">
+          Edit
+        </button>
+      </div>
+
+      <!-- Logout Button -->
+      <a href="./registration.html">
+        <button class="logout-btn" onclick="logout()">LOG OUT</button>
+      </a>
+
+      <!-- Food Cards -->
+      <div id="food_container" class="review-cards">
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <small>© 2025 Annesana. All Rights Reserved.</small>
+  </footer>
+
+  <script src="../scripts/vendorprofile.js">
+
+  </script>
+</body>
+
 </html>
